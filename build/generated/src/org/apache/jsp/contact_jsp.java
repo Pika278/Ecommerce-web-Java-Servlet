@@ -1,0 +1,277 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class contact_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!doctype html>\n");
+      out.write("<html lang=\"zxx\">\n");
+      out.write("\n");
+      out.write("<head>\n");
+      out.write("    <!-- Required meta tags -->\n");
+      out.write("    <meta charset=\"utf-8\">\n");
+      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n");
+      out.write("    <title>Quin Store</title>\n");
+      out.write("    <link rel=\"icon\" href=\"img/favicon.png\">\n");
+      out.write("    <!-- Bootstrap CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">\n");
+      out.write("    <!-- animate CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/animate.css\">\n");
+      out.write("    <!-- owl carousel CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/owl.carousel.min.css\">\n");
+      out.write("    <!-- font awesome CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/all.css\">\n");
+      out.write("    <!-- flaticon CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/flaticon.css\">\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/themify-icons.css\">\n");
+      out.write("    <!-- font awesome CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/magnific-popup.css\">\n");
+      out.write("    <!-- swiper CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/slick.css\">\n");
+      out.write("    <!-- style CSS -->\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/style.css\">\n");
+      out.write("</head>\n");
+      out.write("\n");
+      out.write("<body>\n");
+      out.write("    ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "menu.jsp", out, false);
+      out.write("\n");
+      out.write("    \n");
+      out.write("    <!-- breadcrumb part start-->\n");
+      out.write("    <section class=\"breadcrumb_part\">\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("            <div class=\"row\">\n");
+      out.write("                <div class=\"col-lg-12\">\n");
+      out.write("                    <div class=\"breadcrumb_iner\">\n");
+      out.write("                        <h2>contact</h2>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </div>\n");
+      out.write("    </section>\n");
+      out.write("    <!-- breadcrumb part end-->\n");
+      out.write("\n");
+      out.write("  <!-- ================ contact section start ================= -->\n");
+      out.write("  <section class=\"contact-section section_padding\">\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <div class=\"d-none d-sm-block mb-5 pb-4\">\n");
+      out.write("        <div id=\"map\" style=\"height: 480px;\"></div>\n");
+      out.write("        <script>\n");
+      out.write("          function initMap() {\n");
+      out.write("            var uluru = {\n");
+      out.write("              lat: -25.363,\n");
+      out.write("              lng: 131.044\n");
+      out.write("            };\n");
+      out.write("            var grayStyles = [{\n");
+      out.write("                featureType: \"all\",\n");
+      out.write("                stylers: [{\n");
+      out.write("                    saturation: -90\n");
+      out.write("                  },\n");
+      out.write("                  {\n");
+      out.write("                    lightness: 50\n");
+      out.write("                  }\n");
+      out.write("                ]\n");
+      out.write("              },\n");
+      out.write("              {\n");
+      out.write("                elementType: 'labels.text.fill',\n");
+      out.write("                stylers: [{\n");
+      out.write("                  color: '#ccdee9'\n");
+      out.write("                }]\n");
+      out.write("              }\n");
+      out.write("            ];\n");
+      out.write("            var map = new google.maps.Map(document.getElementById('map'), {\n");
+      out.write("              center: {\n");
+      out.write("                lat: -31.197,\n");
+      out.write("                lng: 150.744\n");
+      out.write("              },\n");
+      out.write("              zoom: 9,\n");
+      out.write("              styles: grayStyles,\n");
+      out.write("              scrollwheel: false\n");
+      out.write("            });\n");
+      out.write("          }\n");
+      out.write("        </script>\n");
+      out.write("        <script\n");
+      out.write("          src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap\">\n");
+      out.write("        </script>\n");
+      out.write("\n");
+      out.write("      </div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-12\">\n");
+      out.write("          <h2 class=\"contact-title\">Get in Touch</h2>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-lg-8\">\n");
+      out.write("          <form class=\"form-contact contact_form\" action=\"contact_process.php\" method=\"post\" id=\"contactForm\"\n");
+      out.write("            novalidate=\"novalidate\">\n");
+      out.write("            <div class=\"row\">\n");
+      out.write("              <div class=\"col-12\">\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("\n");
+      out.write("                  <textarea class=\"form-control w-100\" name=\"message\" id=\"message\" cols=\"30\" rows=\"9\"\n");
+      out.write("                    onfocus=\"this.placeholder = ''\" onblur=\"this.placeholder = 'Enter Message'\"\n");
+      out.write("                    placeholder='Enter Message'></textarea>\n");
+      out.write("                </div>\n");
+      out.write("              </div>\n");
+      out.write("              <div class=\"col-sm-6\">\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("                  <input class=\"form-control\" name=\"name\" id=\"name\" type=\"text\" onfocus=\"this.placeholder = ''\"\n");
+      out.write("                    onblur=\"this.placeholder = 'Enter your name'\" placeholder='Enter your name'>\n");
+      out.write("                </div>\n");
+      out.write("              </div>\n");
+      out.write("              <div class=\"col-sm-6\">\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("                  <input class=\"form-control\" name=\"email\" id=\"email\" type=\"email\" onfocus=\"this.placeholder = ''\"\n");
+      out.write("                    onblur=\"this.placeholder = 'Enter email address'\" placeholder='Enter email address'>\n");
+      out.write("                </div>\n");
+      out.write("              </div>\n");
+      out.write("              <div class=\"col-12\">\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("                  <input class=\"form-control\" name=\"subject\" id=\"subject\" type=\"text\" onfocus=\"this.placeholder = ''\"\n");
+      out.write("                    onblur=\"this.placeholder = 'Enter Subject'\" placeholder='Enter Subject'>\n");
+      out.write("                </div>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group mt-3\">\n");
+      out.write("              <a href=\"#\" class=\"btn_3 button-contactForm\">Send Message</a>\n");
+      out.write("            </div>\n");
+      out.write("          </form>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-lg-4\">\n");
+      out.write("          <div class=\"media contact-info\">\n");
+      out.write("            <span class=\"contact-info__icon\"><i class=\"ti-home\"></i></span>\n");
+      out.write("            <div class=\"media-body\">\n");
+      out.write("              <h3>Hà Đông, Hà Nội</h3>\n");
+      out.write("              <p>Km10, Nguyễn Trãi</p>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("          <div class=\"media contact-info\">\n");
+      out.write("            <span class=\"contact-info__icon\"><i class=\"ti-tablet\"></i></span>\n");
+      out.write("            <div class=\"media-body\">\n");
+      out.write("              <h3>+84 123456789</h3>\n");
+      out.write("              <p>Mon to Fri 9am to 6pm</p>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("          <div class=\"media contact-info\">\n");
+      out.write("            <span class=\"contact-info__icon\"><i class=\"ti-email\"></i></span>\n");
+      out.write("            <div class=\"media-body\">\n");
+      out.write("              <h3>support@qiunn.com</h3>\n");
+      out.write("              <p>Send us your query anytime!</p>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </section>\n");
+      out.write("  <!-- ================ contact section end ================= -->\n");
+      out.write("    <!--::footer_part start::-->\n");
+      out.write("    <footer class=\"footer_part\">\n");
+      out.write("        <div class=\"footer_iner\">\n");
+      out.write("            <div class=\"container\">\n");
+      out.write("                <div class=\"row justify-content-between align-items-center\">\n");
+      out.write("                    <div class=\"col-lg-8\">\n");
+      out.write("                        <div class=\"footer_menu\">\n");
+      out.write("                            <div class=\"footer_logo\">\n");
+      out.write("                                <a href=\"home\"><img src=\"img/logo.png\" alt=\"#\"></a>\n");
+      out.write("                            </div>\n");
+      out.write("                            <div class=\"footer_menu_item\">\n");
+      out.write("                                <a href=\"home\">Home</a>\n");
+      out.write("                                <a href=\"about\">About</a>\n");
+      out.write("                                <a href=\"product\">Products</a>\n");
+      out.write("                                <a href=\"contact\">Contact</a>\n");
+      out.write("                                <a href=\"login\">Login</a>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"col-lg-4\">\n");
+      out.write("                        <div class=\"social_icon\">\n");
+      out.write("                            <a href=\"#\"><i class=\"fab fa-facebook-f\"></i></a>\n");
+      out.write("                            <a href=\"#\"><i class=\"fab fa-instagram\"></i></a>\n");
+      out.write("                            <a href=\"#\"><i class=\"fab fa-google-plus-g\"></i></a>\n");
+      out.write("                            <a href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </div>\n");
+      out.write("    </footer>\n");
+      out.write("    <!--::footer_part end::-->\n");
+      out.write("\n");
+      out.write("    <!-- jquery plugins here-->\n");
+      out.write("    <script src=\"js/jquery-1.12.1.min.js\"></script>\n");
+      out.write("    <!-- popper js -->\n");
+      out.write("    <script src=\"js/popper.min.js\"></script>\n");
+      out.write("    <!-- bootstrap js -->\n");
+      out.write("    <script src=\"js/bootstrap.min.js\"></script>\n");
+      out.write("    <!-- magnific popup js -->\n");
+      out.write("    <script src=\"js/jquery.magnific-popup.js\"></script>\n");
+      out.write("    <!-- carousel js -->\n");
+      out.write("    <script src=\"js/owl.carousel.min.js\"></script>\n");
+      out.write("    <script src=\"js/jquery.nice-select.min.js\"></script>\n");
+      out.write("    <!-- slick js -->\n");
+      out.write("    <script src=\"js/slick.min.js\"></script>\n");
+      out.write("    <script src=\"js/jquery.counterup.min.js\"></script>\n");
+      out.write("    <script src=\"js/waypoints.min.js\"></script>\n");
+      out.write("    <script src=\"js/contact.js\"></script>\n");
+      out.write("    <script src=\"js/jquery.ajaxchimp.min.js\"></script>\n");
+      out.write("    <script src=\"js/jquery.form.js\"></script>\n");
+      out.write("    <script src=\"js/jquery.validate.min.js\"></script>\n");
+      out.write("    <script src=\"js/mail-script.js\"></script>\n");
+      out.write("    <!-- custom js -->\n");
+      out.write("    <script src=\"js/custom.js\"></script>\n");
+      out.write("</body>\n");
+      out.write("\n");
+      out.write("</html>");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
