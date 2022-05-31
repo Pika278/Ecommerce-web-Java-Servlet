@@ -92,16 +92,15 @@
                         <div class="col-lg-8">
                             <div class="footer_menu">
                                 <div class="footer_logo">
-                                    <a href="index.html"><img src="img/logo.png" alt="#"></a>
-                                </div>
-                                <div class="footer_menu_item">
-                                    <a href="index.html">Home</a>
-                                    <a href="about.html">About</a>
-                                    <a href="product_list.html">Products</a>
-                                    <a href="#">Pages</a>
-                                    <a href="blog.html">Blog</a>
-                                    <a href="contact.html">Contact</a>
-                                </div>
+                                <a href="home"><img src="img/logo1.png" alt="#"></a>
+                            </div>
+                            <div class="footer_menu_item">
+                                <a href="home">Home</a>
+                                <a href="about">About</a>
+                                <a href="product">Products</a>
+                                <a href="contact">Contact</a>
+                                <a href="login">Login</a>
+                            </div>
                             </div>
                         </div>
                         <div class="col-lg-4">

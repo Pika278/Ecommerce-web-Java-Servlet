@@ -4898,7 +4898,7 @@ input:focus {
 
 /* line 1156, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_product.scss */
 .cart_inner .table tbody tr td .product_count input {
-  width: 100px;
+  width: 70px;
   padding-left: 30px;
   height: 50px;
   outline: none;

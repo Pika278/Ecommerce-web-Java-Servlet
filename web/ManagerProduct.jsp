@@ -343,8 +343,8 @@
                     </div>
                     
                 </div>
-<!--                    <div><a href="home" ><button type="button" class="btn btn-primary">Back to home</button></div>-->
-            </div>        
+            </div>     
+                    <a href = "home" class="btn btn-primary">Back to home</a>
         </div>
         <!-- Add Product -->
         <div id="addEmployeeModal" class="modal fade">
@@ -397,27 +397,5 @@
                 </div>
             </div>
         </div>
-
-<!--         Delete Product 
-        <div id="deleteEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form action="delete" method="post">
-                        <div class="modal-header">						
-                            <h4 class="modal-title">Delete Product</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">					
-                            <p>Are you sure you want to delete this Product?</p>
-                            <p class="text-warning"><small>This action cannot be undone.</small></p>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="text" id="pid2" name="ProductID" visibility: hidden>
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-danger" value="Delete">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>-->
+        
 </html>

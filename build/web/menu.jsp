@@ -35,7 +35,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="home"> <img src="img/logoo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="home"> <img src="img/logo1.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -57,25 +57,15 @@
                                     <a class="nav-link" href="contact">Contact</a>
                                 </li>
                                                 <!--Nếu acc khác null -> login rồi -> hiển thị cả 3 menu dưới-->
-                                <!--<c:if test = "${sessionScope.acc != null}">-->
+                                <c:if test = "${sessionScope.acc != null}">
                                     <!--Kiểm tra xem có phải admin ko: isAdmin == 1-->
                                     <c:if test="${sessionScope.acc.isAdmin == 1}">
                                         <li class="nav-item">
                                             <a class="nav-link" href="managerproduct">Manager Product</a>
                                         </li> 
-<!--                                        <li class="nav-item">
-                                            <a class="nav-link" href="managerAccount">Manager Account</a>
-                                        </li>-->
                                     </c:if>
-                                    <c:if test="${sessionScope.acc.isAdmin == 1}">
-<!--                                        <li class="nav-item">
-                                            <a class="nav-link" href="managerProduct">Manager Product</a>
-                                        </li> -->
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="manageraccount">Manager Account</a>
-                                        </li>
-                                    </c:if>
-                                <!--</c:if>-->
+                                    
+                                </c:if>
                                 <c:if test="${sessionScope.acc == null}">
                                <li class="nav-item">
                                    <a class="nav-link" href="login"
@@ -90,14 +80,22 @@
                                    <!--Sửa: khi ấn logout: dẫn -> servlet-->
                                    <a class="nav-link" href="logout">LogOut</a>
                                </li>
-                           </c:if>
+                                </c:if>
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex align-items-center">
-                            <a href="cart">
+                             <c:if test="${sessionScope.acc == null}">
+                               <a href="home">
                                 <i class="flaticon-shopping-cart-black-shape"></i>
-                                <span>(${c.countNumCart(sessionScope.acc.id)})</span>
-                            </a>
+                                <!--<span>(${c.countNumCart(sessionScope.acc.id)})</span>-->
+                                </a>
+                             </c:if>
+                            <c:if test="${sessionScope.acc != null}">
+                               <a href="cart">
+                                <i class="flaticon-shopping-cart-black-shape"></i>
+                                <!--<span>(${c.countNumCart(sessionScope.acc.id)})</span>-->
+                                </a>
+                            </c:if>
                         </div>
                             
                     </nav>

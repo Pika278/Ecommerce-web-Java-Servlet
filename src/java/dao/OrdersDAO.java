@@ -8,6 +8,7 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,17 +54,30 @@ public class OrdersDAO extends DBContext{
         return list;
     }
     
-    public void add(String accountID, String name,  String phone, String email, String address, String orderDate) {
+    public int add(String accountID, String name,  String phone, String email, String address) {
         String query = "INSERT INTO Orders VALUES (?, ?, ?, ?, ?);";
         try {
-            PreparedStatement ps = connection.prepareStatement(query);
+            PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, accountID);
             ps.setString(2, name);
             ps.setString(3, phone);
             ps.setString(4, email);
             ps.setString(5, address);
             ps.executeUpdate();
-        } catch (Exception e) {
+            ResultSet rs = ps.getGeneratedKeys();
+            if(rs.next()) {
+                return rs.getInt(1);
+            }
+            rs.close();
+       } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
         }
+        return 0;
     }
+//    public static void main(String[] args) throws ParseException {
+//        OrdersDAO p = new OrdersDAO();
+//        List<Orders> list = p.getAllOrders();
+//        System.out.println(list.get(0).getName());
+//    }
 }

@@ -165,7 +165,7 @@
                     <div class="col-lg-8">
                         <div class="footer_menu">
                             <div class="footer_logo">
-                                <a href="home"><img src="img/logo.png" alt="#"></a>
+                                <a href="home"><img src="img/logo1.png" alt="#"></a>
                             </div>
                             <div class="footer_menu_item">
                                 <a href="home">Home</a>

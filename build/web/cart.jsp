@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
      <jsp:useBean id="c" class="dao.CartDAO"></jsp:useBean>
 </head>
 <body>
@@ -55,6 +57,7 @@
                 <th scope="col">Product</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -76,10 +79,13 @@
                 </td>
                 <td>
                   <div class="product_count">
-                    <span class="input-number-decrement"> <i class="ti-minus"></i></span>
+                    <!--<span class="input-number-decrement"> <i class="ti-minus"></i></span>-->
                     <input class="input-number" type="text" value="${o.quantity}" min="0" max="10">
-                    <span class="input-number-increment"> <i class="ti-plus"></i></span>
+                    <!--<span class="input-number-increment"> <i class="ti-plus"></i></span>-->
                   </div>
+                </td>
+                <td>
+                    <a href="deleteproductcart?pid=${o.productID}" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xe92b;</i></a>
                 </td>
 
               </tr>

@@ -6,11 +6,7 @@
 package control;
 
 import dao.CartDAO;
-import dao.OrderedProductDAO;
-import dao.OrdersDAO;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,14 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Account;
-import model.Cart;
 
 /**
  *
  * @author ASUS
  */
-@WebServlet(name = "CheckOutServlet", urlPatterns = {"/checkout"})
-public class CheckOutServlet extends HttpServlet {
+@WebServlet(name = "DeleteProductCart", urlPatterns = {"/deleteproductcart"})
+public class DeleteProductCart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,35 +34,15 @@ public class CheckOutServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-//        String id = request.getParameter("id");
-        String name = request.getParameter("name");
-        String number = request.getParameter("number");
-        String email = request.getParameter("email");
-        String add = request.getParameter("add");
-
-
-        //Add data to Database
+        String pid = request.getParameter("pid");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
-        int id = a.getId();
-        OrdersDAO dao = new OrdersDAO();
-        int orderID = dao.add(String.valueOf(id),name,number,email, add);
-//        dao.add(String.valueOf(id), name, number, email, add);
-        System.out.println(orderID);
-        CartDAO cartDAO = new CartDAO();
-//        ArrayList<Cart> cart = (ArrayList<Cart>) session.getAttribute("list");
-        List<Cart> list = cartDAO.getCart(a.getId());
-
-        for(Cart cartItem: list) {
-            int quantity = cartItem.getQuantity();
-            int productID = cartItem.getProductID();
-            OrderedProductDAO orderProductDAO = new OrderedProductDAO();
-            orderProductDAO.add(orderID,productID,quantity);
-        }
-        cartDAO.deleteCart(id);
-        response.sendRedirect("home");
+        int accID = a.getId();
+        CartDAO dao = new CartDAO();
+        dao.deleteProductCart(accID, Integer.parseInt(pid));
+        response.sendRedirect("cart");
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -81,7 +56,6 @@ public class CheckOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**

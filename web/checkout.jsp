@@ -55,21 +55,19 @@
             <h3>Billing Details</h3>
             <form action="checkout" method="post" >
               <div class="col-md-12 form-group ">
-                  <input required type="text" class="form-control" id="first" name="name" placeholder = "Full name">
-                <!--<span class="placeholder" data-placeholder="Full name"></span>-->
+                  <input required type="text" class="form-control" name="name" placeholder = "Full name">
               </div>
               <div class="col-md-12 form-group p_star">
-                <input required type="text" class="form-control" id="number" name="number" placeholder = "Phone Number">
-                <!--<span class="placeholder" data-placeholder="Phone number"></span>-->
+                <input required type="text" class="form-control"  name="number" placeholder = "Phone Number">
               </div>
               <div class="col-md-12 form-group p_star">
-                <input required type="text" class="form-control" id="email" name="email" placeholder = "Emai">
-                <!--<span class="placeholder" data-placeholder="Email Address"></span>-->
+                <input required type="text" class="form-control"  name="email" placeholder = "Emai">
               </div>
               <div class="col-md-12 form-group p_star">
-                  <input required type="text" class="form-control" id="add1" name="add" placeholder = "Address">
-                <!--<span class="placeholder" data-placeholder="Address"></span>-->
+                  <input required type="text" class="form-control"  name="add" placeholder = "Address">
               </div>
+                 <input type="submit" class="btn_3" value="Checkout" >
+
             </form>
           </div>
 
@@ -112,7 +110,7 @@
                   </a>
                 </li>
               </ul>
-              <a class="btn_3" href="checkout?id=${sessionScope.acc.id}">Checkout</a>
+              <!--<a class="btn_3" href="checkout?id=${sessionScope.acc.id}">Checkout</a>-->
             </div>
           </div>
         </div>
@@ -129,16 +127,15 @@
                   <div class="col-lg-8">
                       <div class="footer_menu">
                           <div class="footer_logo">
-                              <a href="index.html"><img src="img/logo.png" alt="#"></a>
-                          </div>
-                          <div class="footer_menu_item">
-                              <a href="index.html">Home</a>
-                              <a href="about.html">About</a>
-                              <a href="product_list.html">Products</a>
-                              <a href="#">Pages</a>
-                              <a href="blog.html">Blog</a>
-                              <a href="contact.html">Contact</a>
-                          </div>
+                                <a href="home"><img src="img/logo1.png" alt="#"></a>
+                            </div>
+                            <div class="footer_menu_item">
+                                <a href="home">Home</a>
+                                <a href="about">About</a>
+                                <a href="product">Products</a>
+                                <a href="contact">Contact</a>
+                                <a href="login">Login</a>
+                            </div>
                       </div>
                   </div>
                   <div class="col-lg-4">
