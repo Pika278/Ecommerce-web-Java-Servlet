@@ -75,9 +75,15 @@ public class OrdersDAO extends DBContext{
         }
         return 0;
     }
-//    public static void main(String[] args) throws ParseException {
-//        OrdersDAO p = new OrdersDAO();
-//        List<Orders> list = p.getAllOrders();
-//        System.out.println(list.get(0).getName());
-//    }
+    public void del(int orderID) {
+        String query = "DELETE FROM Orders where OrderID = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setInt(1, orderID);
+            ps.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }

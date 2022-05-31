@@ -9,7 +9,7 @@ import dao.CartDAO;
 import dao.OrderedProductDAO;
 import dao.OrdersDAO;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,22 +51,33 @@ public class CheckOutServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
         int id = a.getId();
-        OrdersDAO dao = new OrdersDAO();
-        int orderID = dao.add(String.valueOf(id),name,number,email, add);
-//        dao.add(String.valueOf(id), name, number, email, add);
-        System.out.println(orderID);
+        OrdersDAO ordersDAO = new OrdersDAO();
+        int orderID = ordersDAO.add(String.valueOf(id),name,number,email, add);
         CartDAO cartDAO = new CartDAO();
-//        ArrayList<Cart> cart = (ArrayList<Cart>) session.getAttribute("list");
         List<Cart> list = cartDAO.getCart(a.getId());
-
+        int flag = 1;
         for(Cart cartItem: list) {
             int quantity = cartItem.getQuantity();
             int productID = cartItem.getProductID();
             OrderedProductDAO orderProductDAO = new OrderedProductDAO();
-            orderProductDAO.add(orderID,productID,quantity);
+            boolean addOrderedProduct = orderProductDAO.add(orderID, productID, quantity);
+            if (addOrderedProduct == false) {
+                ordersDAO.del(orderID);
+                orderProductDAO.del(orderID);
+                PrintWriter out = response.getWriter();
+//                out.println("Can't place an order because the quantity in stock is not enough");
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Can not place an order because the quantity in stock is not enough');");
+                    out.println("location='cart';");
+                    out.println("</script>");
+                flag = 0;
+                break;
+            }
         }
-        cartDAO.deleteCart(id);
-        response.sendRedirect("home");
+        if(flag == 1) {
+            cartDAO.deleteCart(id);
+            response.sendRedirect("home");
+        }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -110,7 +110,6 @@
                   </a>
                 </li>
               </ul>
-              <!--<a class="btn_3" href="checkout?id=${sessionScope.acc.id}">Checkout</a>-->
             </div>
           </div>
         </div>
@@ -179,6 +178,28 @@
   <script src="js/mail-script.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+      <script>
+            function addCart(ProductID) {
+                <c:if test="${sessionScope.acc != null}">
+                //Sử dụng Ajax
+                $.ajax({
+                    url: "/web/addtocart",
+                    type: "get", //send it through get method
+                    data: {
+                        ProductID: ProductID
+                    },
+                    success: function (message) {
+                        alert(message);
+                    },
+                    error: function () {
+                    }
+                });
+                </c:if>
+                <c:if test="${sessionScope.acc == null}">
+                    location.href = "login";
+                </c:if>
+                                                    }
+    </script>
 </body>
 
 </html>

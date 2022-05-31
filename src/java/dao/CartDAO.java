@@ -82,7 +82,7 @@ public class CartDAO extends DBContext {
 
     public boolean addToCart(int accountID, int productID, int quantity) {
         CartDAO dao = new CartDAO();
-        if (countQuantityProduct(productID) == 0) {
+        if (countQuantityProduct(productID) <= 0) {
             return false;
         } else {
             List<Cart> list = dao.getCart(accountID);
@@ -96,13 +96,12 @@ public class CartDAO extends DBContext {
                     ps.executeUpdate();
                 } catch (Exception e) {
                 }
-                delete1Quantity(productID);
                 return true;
             }
             else {
                 for (Cart cart : list) {
                     if (cart.getProductID() == productID) {
-                        String query = "update Cart set Quantity = ? where AccountID = ? and ProductID = ?";
+                        String query = "update Cart set Cart.Quantity = ? where AccountID = ? and ProductID = ?";
                         try {
                             ps = connection.prepareStatement(query);
                             int x = cart.getQuantity() + quantity;
@@ -112,7 +111,6 @@ public class CartDAO extends DBContext {
                             ps.executeUpdate();
                         } catch (Exception e) {
                         }
-                        dao.delete1Quantity(productID);
                         return true;
                     }
                 }
@@ -125,22 +123,9 @@ public class CartDAO extends DBContext {
                     ps.executeUpdate();
                 } catch (Exception e) {
                 }
-                delete1Quantity(productID);
                 return true;
                 }
            
-        }
-    }
-
-    public void delete1Quantity(int ProductID) {
-        String query = "update Product\n"
-                + "set Quantity = Quantity - 1\n"
-                + "where ProductID = ?";
-        try {
-            ps = connection.prepareStatement(query);
-            ps.setInt(1, ProductID);
-            ps.executeUpdate();
-        } catch (Exception e) {
         }
     }
 
