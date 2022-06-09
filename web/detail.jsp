@@ -50,14 +50,21 @@
         <div class="col-lg-12">
           <div class="product_img_slide owl-carousel">
             <div class="single_product_img">
-              <img src="${detail.image}" alt="#" class="img-fluid">
-            </div>
-<!--            <div class="single_product_img">
-              <img src="img/product/single_product.png" alt="#" class="img-fluid">
+              <img src="${detail.image1}" alt="#" class="img-fluid">
             </div>
             <div class="single_product_img">
-              <img src="img/product/single_product.png" alt="#" class="img-fluid">
-            </div>-->
+              <img src="${detail.image2}" alt="#" class="img-fluid">
+            </div>
+            <div class="single_product_img">
+              <img src="${detail.image3}" alt="#" class="img-fluid">
+            </div>
+            <div class="single_product_img">
+              <img src="${detail.image4}" alt="#" class="img-fluid">
+            </div>
+            <div class="single_product_img">
+              <img src="${detail.image5}" alt="#" class="img-fluid">
+            </div>
+            
           </div>
         </div>
         <div class="col-lg-8">

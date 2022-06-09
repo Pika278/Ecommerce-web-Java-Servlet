@@ -39,7 +39,7 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h1>Best quality</h1>
-                            <p>-Always committed to the best quality</p>
+                            <p>.Always committed to the best quality</p>
                             <a href="productlist" class="btn_1">shop now</a>
                         </div>
                     </div>

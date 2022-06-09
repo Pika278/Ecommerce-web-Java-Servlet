@@ -7,8 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--Favicon-->
         <link rel="icon" type="image/png" href="image/faviconLogo.png" />
-       <title>Quin Store</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+        <title>Quin Store</title>
+        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,7 +19,7 @@
             body {
                 color: #566787;
                 background: #f5f5f5;
-                font-family: 'Varela Round', sans-serif;
+                font-family: 'Rubik', sans-serif;
                 font-size: 13px;
             }
             .table-responsive {
@@ -32,7 +32,7 @@
                 min-width: 1000px;
                 box-shadow: 0 1px 1px rgba(0,0,0,.05);
             }
-            .table-title {        
+/*            .table-title {        
                 padding-bottom: 15px;
                 background: #435d7d;
                 color: #fff;
@@ -119,44 +119,13 @@
                 vertical-align: middle;
                 margin-right: 10px;
             }
-            .pagination {
-                float: right;
-                margin: 0 0 5px;
-            }
-            .pagination li a {
-                border: none;
-                font-size: 13px;
-                min-width: 30px;
-                min-height: 30px;
-                color: #999;
-                margin: 0 2px;
-                line-height: 30px;
-                border-radius: 2px !important;
-                text-align: center;
-                padding: 0 6px;
-            }
-            .pagination li a:hover {
-                color: #666;
-            }	
-            .pagination li.active a, .pagination li.active a.page-link {
-                background: #03A9F4;
-            }
-            .pagination li.active a:hover {        
-                background: #0397d6;
-            }
-            .pagination li.disabled i {
-                color: #ccc;
-            }
-            .pagination li i {
-                font-size: 16px;
-                padding-top: 6px
-            }
+
             .hint-text {
                 float: left;
                 margin-top: 10px;
                 font-size: 13px;
             }    
-            /* Custom checkbox */
+             Custom checkbox 
             .custom-checkbox {
                 position: relative;
             }
@@ -207,7 +176,7 @@
                 box-shadow: none;
                 background: #ddd;
             }
-            /* Modal styles */
+             Modal styles 
             .modal .modal-dialog {
                 max-width: 400px;
             }
@@ -224,7 +193,7 @@
             }
             .modal .modal-title {
                 display: inline-block;
-            }
+            }*/
             .modal .form-control {
                 border-radius: 2px;
                 box-shadow: none;
@@ -241,9 +210,7 @@
                 font-weight: normal;
             }	
         </style>
-        <script>
 
-        </script>
     </head>
     <body>
         <%--<jsp:include page="menu.jsp"></jsp:include>--%>
@@ -270,8 +237,24 @@
                                 <textarea class="form-control" rows="4" cols="50" name="description">${detail.description}</textarea>
                             </div>
                             <div class="form-group">
-                                <label>Image Link</label>
-                                <input type="text" class="form-control" required name="image" value="${detail.image}">
+                                <label>Image 1</label>
+                                <input type="text" class="form-control" required name="image1" value="${detail.image1}">
+                            </div>
+                            <div class="form-group">
+                                <label>Image 2</label>
+                                <input type="text" class="form-control" required name="image2" value="${detail.image2}">
+                            </div>
+                            <div class="form-group">
+                                <label>Image 3</label>
+                                <input type="text" class="form-control" required name="image3" value="${detail.image3}">
+                            </div>
+                            <div class="form-group">
+                                <label>Image 4</label>
+                                <input type="text" class="form-control" required name="image4" value="${detail.image4}">
+                            </div>
+                            <div class="form-group">
+                                <label>Image 5</label>
+                                <input type="text" class="form-control" required name="image5" value="${detail.image5}">
                             </div>
                             <div class="form-group">
                                 <label>Buying Price</label>
@@ -295,7 +278,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a type="button" class="btn btn-default" href="manager">Cancel</a>
+                            <a type="button" class="btn btn-default" href="managerproduct">Cancel</a>
                             <input type="submit" class="btn btn-info" value="Save">
                         </div>
                     </form>

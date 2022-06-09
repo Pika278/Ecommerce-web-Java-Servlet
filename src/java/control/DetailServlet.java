@@ -36,6 +36,8 @@ public class DetailServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8"); //Add Vietnamese Characters
+
         String id = request.getParameter("pid");
         ProductDAO productDAO = new ProductDAO();
         Product p = productDAO.getProductByID(id);

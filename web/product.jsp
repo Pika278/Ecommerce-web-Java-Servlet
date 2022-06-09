@@ -60,10 +60,6 @@
                             <div class="select_option">
                                 <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
                                 <div class="select_option_dropdown">
-<!--                                    <p><a href="#">Category 1</a></p>
-                                    <p><a href="#">Category 2</a></p>
-                                    <p><a href="#">Category 3</a></p>
-                                    <p><a href="#">Category 4</a></p>-->
                                 <c:forEach items = "${listC}" var = "c">
                                     <p><a href="category?cid=${c.id}">${c.name}</a></p>
                                 </c:forEach> 
@@ -75,21 +71,23 @@
                 <div class="col-md-8">
                     <div class="product_list">
                         <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                 <c:forEach items="${listP}" var="o">
+                            <c:forEach items="${listP}" var="o">
+                                <div class="col-lg-6 col-sm-6">
                                      <div class="single_product_item">
-                                        <img src="${o.image}" alt="#" class="img-fluid">
+                                        <img src="${o.image1}" alt="#" class="img-fluid">
                                         <h3> <a href="detail?pid=${o.productID}">${o.productName}</a> </h3>
                                         <p>$${o.getPriceWithDot()}</p>
                                     </div>
                                     <div class="single_product_item">
                                         <a onclick="addCart(${o.productID})" class="btn btn-outline-dark btn-block">Add to cart<i class="fas fa-shopping-cart"></i></a>
                                     </div>
-                                </c:forEach>
+                                
                             </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- product list part end-->
@@ -97,20 +95,6 @@
     <!-- feature part here -->
     <section class="feature_part section_padding">
         <div class="container">
-<!--            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <div class="feature_part_tittle">
-                        <h3>Credibly innovate granular
-                        internal or organic sources
-                        whereas standards.</h3>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="feature_part_content">
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness.</p>
-                    </div>
-                </div>
-            </div>-->
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_feature_part">

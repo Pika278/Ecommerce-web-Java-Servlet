@@ -25,12 +25,13 @@ public class ProductDAO extends DBContext{
     public List<Product> getAllProduct() {
         List<Product> list = new ArrayList<>();
         String sql = "select Product.ProductID, Category.CategoryID, Product.ProductName, Product.BuyingPrice, Product.SellingPrice, Product.Quantity, Product.image,"
-                + " Product.Description from Product inner join Category on Category.CategoryID = Product.CategoryID";
+                + "Product.image2,Product.image3, Product.image4, Product.image5, Product.Description from Product inner join Category on Category.CategoryID = Product.CategoryID";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-                list.add(new Product(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8)));
+                list.add(new Product(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),
+                rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12)));
             }
 
         } catch (SQLException e) {
@@ -38,8 +39,10 @@ public class ProductDAO extends DBContext{
         return list;
     }
     
-    public void edit(String ID, String categoryID, String name,  String buyingPrice, String sellingPrice, String quantity, String image, String description) {
-        String query = "UPDATE Product SET CategoryID = ?, ProductName = ?, BuyingPrice = ?, SellingPrice = ?, Quantity = ?, image = ?, Description = ? WHERE ProductID = ?";
+    public void edit(String ID, String categoryID, String name,  String buyingPrice, String sellingPrice, String quantity, String image1, 
+            String image2, String image3, String image4, String image5, String description) {
+        String query = "UPDATE Product SET CategoryID = ?, ProductName = ?, BuyingPrice = ?, SellingPrice = ?, Quantity = ?, image = ?,"
+                + "image2 = ?, image3 = ?, image4 = ?, image5 = ?, Description = ? WHERE ProductID = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, categoryID);
@@ -47,29 +50,36 @@ public class ProductDAO extends DBContext{
             ps.setString(3, buyingPrice);
             ps.setString(4, sellingPrice);
             ps.setString(5, quantity);
-            ps.setString(6, image);
-            ps.setString(7, description);
-            ps.setString(8,ID);
+            ps.setString(6, image1);
+            ps.setString(7, image2);
+            ps.setString(8, image3);
+            ps.setString(9, image4);
+            ps.setString(10, image5);
+            ps.setString(11, description);
+            ps.setString(12,ID);
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
 
     public void delete(String id) {
-        String query = "DELETE FROM Cart WHERE ProductID = ?;\n"
+        String query = "DELETE FROM OrderedProduct WHERE ProductID = ?;\n"
+                + "DELETE FROM Cart WHERE ProductID = ?;"
                 + "DELETE FROM Product WHERE ProductID = ?;";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, id);
             ps.setString(2, id);
+            ps.setString(3, id);
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public void add(String categoryID, String name,  String buyingPrice, String sellingPrice, String quantity, String image, String description) {
-        String query = "INSERT INTO Product VALUES (?, ?, ?, ?, ?, ?, ?);";
+    public void add(String categoryID, String name,  String buyingPrice, String sellingPrice, String quantity, String image1, 
+            String image2, String image3, String image4, String image5, String description) {
+        String query = "INSERT INTO Product VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, categoryID);
@@ -77,8 +87,12 @@ public class ProductDAO extends DBContext{
             ps.setString(3, buyingPrice);
             ps.setString(4, sellingPrice);
             ps.setString(5, quantity);
-            ps.setString(6, image);
-            ps.setString(7, description);
+            ps.setString(6, image1);
+            ps.setString(7, image2);
+            ps.setString(8, image3);
+            ps.setString(9, image4);
+            ps.setString(10, image5);
+            ps.setString(11, description);
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -122,7 +136,8 @@ public class ProductDAO extends DBContext{
             ps.setString(1, ID);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return (new Product(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8)));
+                return (new Product(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),
+                rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12)));
             }
         } catch (Exception e) {
         }
@@ -136,7 +151,8 @@ public class ProductDAO extends DBContext{
             ps.setString(1,cid);
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-                list.add(new Product(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8)));
+                list.add(new Product(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),
+                rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12)));
             }
 
         } catch (SQLException e) {

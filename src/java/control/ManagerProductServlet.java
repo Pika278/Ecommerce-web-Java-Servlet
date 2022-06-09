@@ -43,7 +43,7 @@ public class ManagerProductServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession(); //Dùng session để gọi đến id
         Account a = (Account) session.getAttribute("acc"); //Gọi đến account -> Phải ép kiểu để thành Object
-
+        
         ProductDAO ProductDAO = new ProductDAO();
         List<Product> listP = ProductDAO.getAllProduct();
         request.setAttribute("listP", listP);

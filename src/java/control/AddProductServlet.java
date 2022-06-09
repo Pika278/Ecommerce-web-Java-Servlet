@@ -35,18 +35,21 @@ public class AddProductServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8"); //Add Vietnamese Characters
         //Get data from JSP
-//        String id = "";
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         String buyingprice = request.getParameter("buyingprice");
         String sellingprice = request.getParameter("sellingprice");
-        String image = request.getParameter("image");
+        String image1 = request.getParameter("image1");
+        String image2 = request.getParameter("image2");
+        String image3 = request.getParameter("image3");
+        String image4 = request.getParameter("image4");
+        String image5 = request.getParameter("image5");
         String cateID = request.getParameter("cateID");
         String quantity = request.getParameter("quantity");
 
         //Add data to Database
         ProductDAO dao = new ProductDAO();
-        dao.add(cateID, name, buyingprice, sellingprice, quantity, image, description);
+        dao.add(cateID, name, buyingprice, sellingprice, quantity, image1, image2, image3, image4, image5, description);
         response.sendRedirect("managerproduct");
     }
 
