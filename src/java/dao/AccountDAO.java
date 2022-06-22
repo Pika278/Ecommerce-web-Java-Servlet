@@ -91,11 +91,11 @@ public class AccountDAO extends DBContext {
         }
     }
     
-    public Account getAccountByID(String id) {
+    public Account getAccountByID(int id) {
         String query = "select * from Account where AccountID = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, id);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));

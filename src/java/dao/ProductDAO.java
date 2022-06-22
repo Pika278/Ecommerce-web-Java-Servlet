@@ -160,6 +160,24 @@ public class ProductDAO extends DBContext{
         return list;
     }
     
+    public List<Product> searchProduct(String txtSearch){
+        List<Product> list = new ArrayList<>();
+        String sql = "select * from Product where ProductName like ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, "%" + txtSearch + "%");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                list.add(new Product(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),
+                rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12)));
+            }
+        }
+        catch(SQLException e) {
+            
+        }
+        return list;
+    }
+    
 //    public static void main(String[] args) {
 //        ProductDAO p = new ProductDAO();
 //        List<Product> list = p.getAllProduct();

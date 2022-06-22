@@ -40,23 +40,25 @@ public class CheckOutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-//        String id = request.getParameter("id");
         String name = request.getParameter("name");
         String number = request.getParameter("number");
-        String email = request.getParameter("email");
         String add = request.getParameter("add");
-
-
         //Add data to Database
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
         int id = a.getId();
+        CartDAO CartDAO = new CartDAO();
+        List<Cart> list = CartDAO.getCart(a.getId()); //Truyền vào id của account
+        int total = 0;
+        for (Cart cart : list) {
+            total += cart.getSellingPrice() * cart.getQuantity();
+        }
         OrdersDAO ordersDAO = new OrdersDAO();
-        int orderID = ordersDAO.add(String.valueOf(id),name,number,email, add);
+        int orderID = ordersDAO.add(id,name,number,add,total);
         CartDAO cartDAO = new CartDAO();
-        List<Cart> list = cartDAO.getCart(a.getId());
+        List<Cart> cart = cartDAO.getCart(a.getId());
         int flag = 1;
-        for(Cart cartItem: list) {
+        for(Cart cartItem: cart) {
             int quantity = cartItem.getQuantity();
             int productID = cartItem.getProductID();
             OrderedProductDAO orderProductDAO = new OrderedProductDAO();

@@ -5,17 +5,13 @@
  */
 package control;
 
-import dao.CategoryDAO;
 import dao.ProductDAO;
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
-import model.Product;
 
 /**
  *
@@ -53,7 +49,7 @@ public class EditProductServlet extends HttpServlet {
         //Add data to Database
         ProductDAO dao = new ProductDAO();
         dao.edit(id, cateID, name, buyingprice, sellingprice, quantity, image1, image2, image3, image4, image5, description);
-        response.sendRedirect("managerproduct");
+        response.sendRedirect("manageproduct");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

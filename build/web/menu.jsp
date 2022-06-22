@@ -51,60 +51,49 @@
                                     <a class="nav-link" href="about">about</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="productlist">Product</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="contact">Contact</a>
                                 </li>
-                                                <!--Nếu acc khác null -> login rồi -> hiển thị cả 3 menu dưới-->
+
                                 <c:if test = "${sessionScope.acc != null}">
-                                    <!--Kiểm tra xem có phải admin ko: isAdmin == 1-->
                                     <c:if test="${sessionScope.acc.isAdmin == 1}">
-                                        <div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="managerproduct">Manager Product</a>
+                                            <a class="nav-link" href="manage">Manage</a>
                                         </li>
-                                        </div>
-                                        <div>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Order</a>
-                                        </li>
-                                        </div>
                                     </c:if>
-                                    
+                                    <c:if test="${sessionScope.acc.isAdmin != 1}">
+<!--                                        <li class="nav-item">
+                                            <a class="nav-link" href="productlist">Product</a>
+                                        </li>-->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="productlist">Product</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="myorder">My Order</a>
+                                        </li>
+                                    </c:if>
                                 </c:if>
                                 <c:if test="${sessionScope.acc == null}">
-                               <li class="nav-item">
-                                   <a class="nav-link" href="login"
-                                      >Login</a>
-                               </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="productlist">Product</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="login">Login</a>
+                                    </li>
                                 </c:if>
                                 <c:if test = "${sessionScope.acc != null}">
-                               <!--Add thêm code Login ở đây-->
-                               <!--Trong test là điều kiện của mình-->
-                               <!--sessionScope: gọi đến Session : nếu acc = null thì hiển thị menu là Login còn nếu khác null thì hiển thị là Logout-->
-                               <li class="nav-item">
-                                   <!--Sửa: khi ấn logout: dẫn -> servlet-->
-                                   <a class="nav-link" href="logout">LogOut</a>
-                               </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="logout">LogOut</a>
+                                    </li>
+                                    <div class="hearer_icon d-flex align-items-center">
+                                        <c:if test="${sessionScope.acc.isAdmin != 1}">
+                                          <a href="cart">
+                                              <i class="flaticon-shopping-cart-black-shape"></i>
+                                           </a>
+                                       </c:if>
+                                   </div>
                                 </c:if>
                             </ul>
                         </div>
-                        <div class="hearer_icon d-flex align-items-center">
-                             <c:if test="${sessionScope.acc == null}">
-                               <a href="home">
-                                <i class="flaticon-shopping-cart-black-shape"></i>
-                                <!--<span>(${c.countNumCart(sessionScope.acc.id)})</span>-->
-                                </a>
-                             </c:if>
-                            <c:if test="${sessionScope.acc != null}">
-                               <a href="cart">
-                                <i class="flaticon-shopping-cart-black-shape"></i>
-                                <!--<span>(${c.countNumCart(sessionScope.acc.id)})</span>-->
-                                </a>
-                            </c:if>
-                        </div>
-                            
                     </nav>
                 </div>
             </div>

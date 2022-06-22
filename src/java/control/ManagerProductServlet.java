@@ -25,7 +25,7 @@ import model.Product;
  *
  * @author thinh
  */
-@WebServlet(name = "ManagerProductServlet", urlPatterns = {"/managerproduct"})
+@WebServlet(name = "ManagerProductServlet", urlPatterns = {"/manageproduct"})
 public class ManagerProductServlet extends HttpServlet {
 
     /**
@@ -41,9 +41,6 @@ public class ManagerProductServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession(); //Dùng session để gọi đến id
-        Account a = (Account) session.getAttribute("acc"); //Gọi đến account -> Phải ép kiểu để thành Object
-        
         ProductDAO ProductDAO = new ProductDAO();
         List<Product> listP = ProductDAO.getAllProduct();
         request.setAttribute("listP", listP);
@@ -52,12 +49,8 @@ public class ManagerProductServlet extends HttpServlet {
         CategoryDAO CategoryDAO = new CategoryDAO();
         List<Category> listC = CategoryDAO.getAllCategory();
         request.setAttribute("listC", listC);
-        
-        AccountDAO AccountDAO = new AccountDAO();
-        List<Account> listS = AccountDAO.getAllAccounts();
-        request.setAttribute("listS", listS);
         request.getRequestDispatcher("ManagerProduct.jsp").forward(request, response);
-    }
+    }   
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

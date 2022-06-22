@@ -31,28 +31,6 @@
 <body>
     <jsp:include page="menu.jsp"></jsp:include>
 
-    <!-- banner part start-->
-    <section class="banner_part">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-5">
-                    <div class="banner_text">
-                        <div class="banner_text_iner">
-                            <h1>Best quality</h1>
-                            <p>-Always committed to the best quality</p>
-                            <a href="productlist" class="btn_1">shop now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="banner_img">
-            <img src="https://news.microsoft.com/wp-content/uploads/prod/sites/463/2021/04/Picture2.jpg" alt="#" class="img-fluid">
-            <img src="img/banner_pattern.png " alt="#" class="pattern_img img-fluid">
-        </div>
-    </section>
-    <!-- banner part start-->
-
     <!-- product list start-->
     <section class="single_product_list">
         <div class="container">

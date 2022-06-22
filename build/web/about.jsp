@@ -30,7 +30,7 @@
 <body>
     <jsp:include page="menu.jsp"></jsp:include>
         <!-- breadcrumb part start-->
-    <section class="breadcrumb_part">
+<!--    <section class="breadcrumb_part">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- breadcrumb part end-->
     
     <!-- product list part start-->
@@ -52,9 +52,7 @@
                         <h5>Our Mission</h5>
                         <h3>Always bring the best quality products with the best prices to customers.</h3>
                         <div class="about_us_video">
-                            <img src="https://co-well.vn/wp-content/uploads/2019/09/e-commerce-link-building-760x400.png" alt="#" class="img-fluid">
-                            <!--<a class="about_video_icon popup-youtube" href="https://co-well.vn/wp-content/uploads/2019/09/e-commerce-link-building-760x400.png"></a>-->
-                            
+                            <img src="https://co-well.vn/wp-content/uploads/2019/09/e-commerce-link-building-760x400.png" alt="#" class="img-fluid">                           
                         </div>
                     </div>
                 </div>
@@ -65,19 +63,7 @@
 
     <!-- feature part here -->
     <section class="feature_part section_padding">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <div class="feature_part_tittle">
-                        <h3>1-1 exchange or refund</h3>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="feature_part_content">
-                        <p>If there is an error or you feel that the product does not meet the needs.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="container"> 
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_feature_part">

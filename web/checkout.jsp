@@ -1,9 +1,7 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!doctype html>
-<html lang="zxx">
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -32,20 +30,6 @@
 <body>
     <jsp:include page="menu.jsp"></jsp:include>
 
-    <!-- breadcrumb part start-->
-    <section class="breadcrumb_part">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <h2>checkout</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb part end-->
-
   <!--================Checkout Area =================-->
   <section class="checkout_area section_padding">
     <div class="container">
@@ -59,9 +43,6 @@
               </div>
               <div class="col-md-12 form-group p_star">
                 <input required type="text" class="form-control"  name="number" placeholder = "Phone Number">
-              </div>
-              <div class="col-md-12 form-group p_star">
-                <input required type="text" class="form-control"  name="email" placeholder = "Emai">
               </div>
               <div class="col-md-12 form-group p_star">
                   <input required type="text" class="form-control"  name="add" placeholder = "Address">
@@ -101,7 +82,7 @@
                 </li>
                 <li>
                   <a href="#">Shipping
-                    <span>Flat rate: $2</span>
+                    <span>Flat rate: $1</span>
                   </a>
                 </li>
                 <li>

@@ -179,15 +179,39 @@ public class CartDAO extends DBContext {
         } catch (Exception e) {
         }
     }
-    public static void main(String[] args) {
-        CartDAO c = new CartDAO();
-        System.out.println(c.countCart(1));
-        List<Cart> list = c.getCart(1);
-        System.out.println(list.isEmpty());
-        for(Cart cart: list) {
-            System.out.println(cart);
+    
+    public void addQuantityProductCart(int UserID, int ProductID) {
+        String query = "update Cart set Quantity = Quantity + 1 where AccountID = ? and ProductID = ?";
+        try {
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, UserID);
+            ps.setInt(2, ProductID);
+            ps.executeUpdate();
+        } catch (Exception e) {
         }
-        System.out.println(list.get(0).getQuantity());
     }
+    
+    public void minusQuantityProductCart(int UserID, int ProductID) {
+        String query = "update Cart set Quantity = Quantity - 1 where AccountID = ? and ProductID = ?";
+        try {
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, UserID);
+            ps.setInt(2, ProductID);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+    
+    
+//    public static void main(String[] args) {
+//        CartDAO c = new CartDAO();
+//        System.out.println(c.countCart(1));
+//        List<Cart> list = c.getCart(1);
+//        System.out.println(list.isEmpty());
+//        for(Cart cart: list) {
+//            System.out.println(cart);
+//        }
+//        System.out.println(list.get(0).getQuantity());
+//    }
     
 }

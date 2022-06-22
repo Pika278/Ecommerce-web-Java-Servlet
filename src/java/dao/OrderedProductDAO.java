@@ -8,6 +8,11 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
+import model.OrderedProduct;
+import model.Orders;
 
 /**
  *
@@ -49,5 +54,55 @@ public class OrderedProductDAO extends DBContext{
         catch (SQLException e){
             e.printStackTrace();
         }
+    }
+    
+    public List<OrderedProduct> getOrderedProduct(int orderID) throws ParseException {
+        List<OrderedProduct> list = new ArrayList<>();
+        String sql = "select Product.ProductName, Product.image, Product.SellingPrice, OrderedProduct.Quantity from OrderedProduct join Product "
+                + "on Product.ProductID = OrderedProduct.ProductID\n" +
+                "where OrderedProduct.OrderID = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, orderID);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                list.add(new OrderedProduct(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getInt(4)));
+            }
+
+        } catch (SQLException e) {
+        }
+        return list;
+    }
+    
+    public List<OrderedProduct> getOrderedProductByUser(int orderID, int userID) throws ParseException {
+        List<OrderedProduct> list = new ArrayList<>();
+        String sql = "select Product.ProductName, Product.image, Product.SellingPrice, OrderedProduct.Quantity from OrderedProduct join Product "
+                + "on Product.ProductID = OrderedProduct.ProductID join Orders on Orders.OrderID = OrderedProduct.OrderID "
+                + "where OrderedProduct.OrderID = ? and Orders.AccountID = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, orderID);
+            ps.setInt(2, userID);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                list.add(new OrderedProduct(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getInt(4)));
+            }
+
+        } catch (SQLException e) {
+        }
+        return list;
+    }
+    
+    public int countOrderedProduct() {
+        String query = "  SELECT SUM (Quantity) FROM OrderedProduct";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+        }
+        return 0;
     }
 }

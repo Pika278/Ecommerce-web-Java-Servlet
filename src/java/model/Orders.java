@@ -14,21 +14,40 @@ import java.text.SimpleDateFormat;
  * @author ASUS
  */
 public class Orders {
+    private int orderID;
     private int accountID;
     private String name;
     private String phone;
-    private String email;
     private String address;
-
+    private int total;
+    private String date;
+    private String status;
     public Orders() {
     }
 
-    public Orders(int accountID, String name, String phone, String email, String address)  {
+    public Orders(int accountID, String name, String phone, String address, int total, String date, String status) {
         this.accountID = accountID;
         this.name = name;
         this.phone = phone;
-        this.email = email;
         this.address = address;
+        this.total = total;
+        this.date = date;
+        this.status = status;
+    }
+
+    public Orders(int orderID, int accountID, String name, String phone, String address, int total, String date, String status) {
+        this.orderID = orderID;
+        this.accountID = accountID;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.total = total;
+        this.date = date;
+        this.status = status;
+    }
+
+    public int getOrderID() {
+        return orderID;
     }
 
     public int getAccountID() {
@@ -55,20 +74,36 @@ public class Orders {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }

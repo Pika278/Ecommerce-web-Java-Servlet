@@ -30,7 +30,7 @@
 
 <body>
     <jsp:include page="menu.jsp"></jsp:include>
-      <!-- breadcrumb part start-->
+       <!--breadcrumb part start-->
     <section class="breadcrumb_part single_product_breadcrumb">
         <div class="container">
             <div class="row">
@@ -41,7 +41,7 @@
             </div>
         </div>
     </section>
-    <!-- breadcrumb part end-->
+     <!--breadcrumb part end-->
 
   <!--================Single Product Area =================-->
   <div class="product_image_area">

@@ -10,42 +10,87 @@ package model;
  * @author ASUS
  */
 public class OrderedProduct {
-    private Orders OrderID;
-    private Product ProductID;
-    private int Quantity;
-
+//    private int orderedproductID;
+    private int orderID;
+    private int productID;
+    private int quantity;
+    private String productName;
+    private String productImage;
+    private int productPrice;
     public OrderedProduct() {
     }
 
-    public OrderedProduct(Orders OrderID, Product ProductID, int Quantity) {
-        this.OrderID = OrderID;
-        this.ProductID = ProductID;
-        this.Quantity = Quantity;
+    public OrderedProduct(String productName, String productImage, int productPrice,int quantity) {
+        this.quantity = quantity;
+        this.productName = productName;
+        this.productImage = productImage;
+        this.productPrice = productPrice;
     }
 
-    public Orders getOrderID() {
-        return OrderID;
+    public OrderedProduct( int orderID, int productID, int quantity) {
+//        this.orderedproductID = orderedproductID;
+        this.orderID = orderID;
+        this.productID = productID;
+        this.quantity = quantity;
     }
 
-    public void setOrderID(Orders OrderID) {
-        this.OrderID = OrderID;
+//    public int getOrderedproductID() {
+//        return orderedproductID;
+//    }
+//
+//    public void setOrderedproductID(int orderedproductID) {
+//        this.orderedproductID = orderedproductID;
+//    }
+
+    public int getOrderID() {
+        return orderID;
     }
 
-    public Product getProductID() {
-        return ProductID;
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
     }
 
-    public void setProductID(Product ProductID) {
-        this.ProductID = ProductID;
+    public int getProductID() {
+        return productID;
+    }
+
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 
     public int getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
-    public void setQuantity(int Quantity) {
-        this.Quantity = Quantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
+    }
+
+    public int getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
+    }
+
+   
 
     
     

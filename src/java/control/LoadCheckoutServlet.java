@@ -7,7 +7,6 @@ package control;
 
 import dao.CartDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,30 +39,19 @@ public class LoadCheckoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession(); //Dùng session để gọi đến id
-        Account a = (Account) session.getAttribute("acc"); //Gọi đến account -> Phải ép kiểu để thành Object
+        HttpSession session = request.getSession(); 
+        Account a = (Account) session.getAttribute("acc"); 
 
         CartDAO CartDAO = new CartDAO();
         List<Cart> list = CartDAO.getCart(a.getId()); //Truyền vào id của account
-        
-//        if (listCart.size() == 0) {
-//            response.sendRedirect("cart");
-//        }
-
         int total = 0;
         for (Cart cart : list) {
             total += cart.getSellingPrice() * cart.getQuantity();
         }
-
         request.setAttribute("list", list);
         request.setAttribute("total", getPriceWithDot(total));
-        request.setAttribute("subtotal", getPriceWithDot(total+1));
-//        request.setAttribute("listShip", listShip);
-        
+        request.setAttribute("subtotal", getPriceWithDot(total+1));        
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
-//        PrintWriter out = response.getWriter();
-//        out.println("Checkout Sucessfully");
-
     }
     public String getPriceWithDot(int price) {
         String priceDot = "" + price;

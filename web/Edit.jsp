@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--Favicon-->
         <link rel="icon" type="image/png" href="image/faviconLogo.png" />
-        <title>Quin Store</title>
+        <title>Edit</title>
         <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -221,7 +221,7 @@
                         <form action="edit" method="post">
                             <div class="modal-header">						
                                 <h4 class="modal-title">Edit Product</h4>
-                                <a type="button" class="close" href="manager" aria-hidden="true">&times;</a>
+                                <a type="button" class="close" href="manageproduct" aria-hidden="true">&times;</a>
                             </div>
                             <div class="modal-body">	
                                 <div class="form-group">
@@ -278,7 +278,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a type="button" class="btn btn-default" href="managerproduct">Cancel</a>
+                            <a type="button" class="btn btn-default" href="manageproduct">Cancel</a>
                             <input type="submit" class="btn btn-info" value="Save">
                         </div>
                     </form>

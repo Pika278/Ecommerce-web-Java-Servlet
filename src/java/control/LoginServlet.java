@@ -118,7 +118,7 @@ public class LoginServlet extends HttpServlet {
                 p.setMaxAge(0); //Ko -> Lưu Username thôi
             }            
             //Xét thời gian tồn tại cho Cookie
-            session.setMaxInactiveInterval(1000);
+//            session.setMaxInactiveInterval(1000);
             //Lưu cookie lên trên trình duyệt: trg hợp này là Chrome
             response.addCookie(u);
             response.addCookie(p);
