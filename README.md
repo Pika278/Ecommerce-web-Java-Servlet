@@ -5,19 +5,19 @@
   + Back-end: Java Servlet
   + Glassfish Server, SQL Server, JDK 1.8
  2. Mô tả chức năng 
- - Chủ cửa hàng: 
+- Chủ cửa hàng: 
   + Đăng nhập/Đăng xuất
   + Quản lý sản phẩm (thêm, sửa, xóa sản phẩm)
   + Quản lý đơn hàng(Chỉnh trạng thái đơn hàng: Chờ giao hàng/Đang giao hàng/Đã giao/Hủy đơn)
   + Thống kê cửa hàng (Tổng số sản phẩm, tổng số đơn hàng, tổng số lượng sản phẩm đã bán, doanh thu)
- - Khách hàng đã đăng nhập :
+- Khách hàng đã đăng nhập :
   + Đăng xuất
   + Xem danh sách sản phẩm, chi tiết sản phẩm
   + Thêm sản phẩm vào giỏ hàng
   + Xem, sửa, xóa giỏ hàng
   + Thanh toán
   + Xem các đơn hàng mình đã từng đặt
- - Khách hàng chưa đăng nhập:
+- Khách hàng chưa đăng nhập:
   + Đăng ký/Đăng nhập
   + Xem danh sách sản phẩm, chi tiết sản phẩm
  3. Cơ sở dữ liệu
