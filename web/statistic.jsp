@@ -37,7 +37,9 @@
                                             <div class="col-md-12 form-group p_star">
                                               <input value="${month}" type="text" class="form-control"  name="month" placeholder = "Enter Month">                                        <i class="ti-search"></i>
                                             </div>
-                                             <button class = "btn_1" type="submit">Submit</button>
+                                            <div class="col-md-12 form-group p_star">
+                                                <button class = "btn_1" type="submit">Submit</button>
+                                            </div>
                                     </form>
                                 </div>
                                 

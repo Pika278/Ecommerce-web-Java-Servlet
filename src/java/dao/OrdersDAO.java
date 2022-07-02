@@ -166,11 +166,11 @@ public class OrdersDAO extends DBContext{
     }
     
     public int countTotalByMonth(String year, String month) {
-        String query = "SELECT SUM(Total) FROM Orders where Status = 'Delivered' and YEAR(Date) = ? and MONTH(Date) like ?";
+        String query = "SELECT SUM(Total) FROM Orders where Status = 'Delivered' and YEAR(Date) = ? and MONTH(Date) = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, year);
-            ps.setString(2, "%" + month + "%");
+            ps.setString(2, month);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);
@@ -195,11 +195,11 @@ public class OrdersDAO extends DBContext{
     }
     
     public int countOrderByMonth(String year, String month) {
-        String query = "SELECT COUNT(*) FROM Orders where Status = 'Delivered' and YEAR(Date) = ? and MONTH(Date) like ?";
+        String query = "SELECT COUNT(*) FROM Orders where Status = 'Delivered' and YEAR(Date) = ? and MONTH(Date) = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, year);
-            ps.setString(2, "%" + month + "%");
+            ps.setString(2, month);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);

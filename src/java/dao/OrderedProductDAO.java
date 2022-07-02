@@ -121,11 +121,11 @@ public class OrderedProductDAO extends DBContext{
     }
     
     public int countOrderedProductByMonth(String year, String month) {
-        String query = "SELECT SUM (Quantity) FROM OrderedProduct join Orders on Orders.OrderID = OrderedProduct.OrderID where Status = 'Delivered' and YEAR(Orders.Date) = ? and MONTH(Orders.Date) like ?";
+        String query = "SELECT SUM (Quantity) FROM OrderedProduct join Orders on Orders.OrderID = OrderedProduct.OrderID where Status = 'Delivered' and YEAR(Orders.Date) = ? and MONTH(Orders.Date) = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, year);
-            ps.setString(2, "%" + month + "%");
+            ps.setString(2, month);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);
@@ -166,11 +166,11 @@ public class OrderedProductDAO extends DBContext{
     
     public int countImportPriceByMonth(String year, String month) {
         String query = "SELECT SUM(Product.BuyingPrice * OrderedProduct.Quantity) FROM Product join OrderedProduct on Product.ProductID = OrderedProduct.ProductID "
-                + "join Orders on Orders.OrderID = OrderedProduct.OrderID where Orders.Status = 'Delivered' and YEAR(Orders.Date) = ?  and MONTH(Orders.Date) like ?";
+                + "join Orders on Orders.OrderID = OrderedProduct.OrderID where Orders.Status = 'Delivered' and YEAR(Orders.Date) = ?  and MONTH(Orders.Date) = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, year);
-            ps.setString(2, "%" + month + "%");
+            ps.setString(2, month);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);

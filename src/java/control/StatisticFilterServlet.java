@@ -47,7 +47,7 @@ public class StatisticFilterServlet extends HttpServlet {
         int totalImportPrice;
         int total;
         int profit;
-        if(month == null) {
+        if(month.isEmpty()) {
             totalOrder = ordersDAO.countOrderByYear(year);
             totalQuantityProduct = orderedDAO.countOrderedProductByYear(year);
             totalImportPrice = orderedDAO.countImportPriceByYear(year);
