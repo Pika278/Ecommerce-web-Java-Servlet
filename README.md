@@ -48,10 +48,10 @@
 - Giao diện trang quản lý
 ![image](https://user-images.githubusercontent.com/91023190/175115778-56022836-d71c-4d95-8a6c-b164508ac293.png)
 - Giao diện trang quản lý sản phẩm
-![image](https://user-images.githubusercontent.com/91023190/175115826-031d57f3-599f-4d2f-9313-3d040533675b.png)
+![image](https://user-images.githubusercontent.com/91023190/177005911-9b5bb4fb-c646-4120-981c-c5924f20a445.png)
 - Giao diện trang thêm sản phẩm
 ![image](https://user-images.githubusercontent.com/91023190/175115853-03476c96-e8b8-4028-87e2-2aa7332f092f.png)
 - Giao diện trang quản lý đơn hàng
 ![image](https://user-images.githubusercontent.com/91023190/175115918-f3e3be70-c486-4a53-aa52-bb2713915017.png)
 - Giao diện trang thống kê
-![image](https://user-images.githubusercontent.com/91023190/175115971-7df16dea-cb7d-483d-a522-14cd37d75415.png)
+![image](https://user-images.githubusercontent.com/91023190/177005927-7cb83528-25e8-4c72-92b3-7d7f1d55ab93.png)
