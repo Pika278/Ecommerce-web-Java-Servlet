@@ -25,16 +25,31 @@
         <c:if test="${sessionScope.acc != null}">
             <c:if test="${sessionScope.acc.isAdmin == 1}">
                  <jsp:include page="menu.jsp"></jsp:include>
+                 <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="product_sidebar">
+                                <div class="single_sedebar">
+                                    <form action="statisticfilter" method = "post">
+                                            <div class="col-md-12 form-group ">
+                                            <input value="${year}" type="text" class="form-control" name="year" placeholder = "Enter Year">
+                                            </div>
+                                            <div class="col-md-12 form-group p_star">
+                                              <input value="${month}" type="text" class="form-control"  name="month" placeholder = "Enter Month">                                        <i class="ti-search"></i>
+                                            </div>
+                                             <button class = "btn_1" type="submit">Submit</button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div> 
+                 </div>
+                 </div>
+                                        
+            <div class="container">
                  <section class="feature_part section_padding">
                     <div class="container" style="padding-top: 100px; "> 
                         <div class="row justify-content-center">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="single_feature_part">
-                                    <!--<img src="img/icon/feature_icon_1.svg" alt="#">-->
-                                    <h4>Total Products</h3>
-                                    <h3>${totalProduct}</h4>
-                                </div>
-                            </div>
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single_feature_part">
                                     <h4>Total Order</h4>
@@ -43,11 +58,18 @@
                             </div>
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single_feature_part">
-                                    <h4>Total Quantity Sold</h4>
+                                    <h4>Total Product Sold</h4>
                                     <h3>${totalQuantityProduct}</h3>
                                 </div>
                             </div>
 
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="single_feature_part">
+                                    <h4>Total Profit</h4>
+                                    <h3>$${profit}</h3>
+                                </div>
+                            </div>
+                                
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single_feature_part">
                                     <h4>Total Income</h4>
@@ -56,8 +78,8 @@
                             </div>
                         </div>
                     </div>
-                 </section>
-                                  <!--::footer_part start::-->
+                 </section><!--
+                <!--::footer_part start::-->
                 <footer class="footer_part">
                     <div class="footer_iner">
                         <div class="container">

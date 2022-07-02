@@ -5,28 +5,24 @@
  */
 package control;
 
-import dao.CategoryDAO;
-import dao.ProductDAO;
 import dao.AccountDAO;
+import dao.OrderedProductDAO;
+import dao.OrdersDAO;
+import dao.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
-import model.Category;
-import model.Product;
 
 /**
  *
- * @author thinh
+ * @author ASUS
  */
-@WebServlet(name = "ManagerProductServlet", urlPatterns = {"/manageproduct"})
-public class ManagerProductServlet extends HttpServlet {
+@WebServlet(name = "StatisticFilterServlet", urlPatterns = {"/statisticfilter"})
+public class StatisticFilterServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,18 +36,40 @@ public class ManagerProductServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        ProductDAO ProductDAO = new ProductDAO();
-        List<Product> listP = ProductDAO.getAllProduct();
-        request.setAttribute("listP", listP);
-        int count = ProductDAO.countProduct();
-        request.setAttribute("count", count);
-        CategoryDAO CategoryDAO = new CategoryDAO();
-        List<Category> listC = CategoryDAO.getAllCategory();
-        request.setAttribute("count", count);
-        request.setAttribute("listC", listC);
-        request.getRequestDispatcher("ManagerProduct.jsp").forward(request, response);
-    }   
+        String year = request.getParameter("year");
+        String month = request.getParameter("month");
+        ProductDAO productDAO = new ProductDAO();
+        int totalProduct = productDAO.countProduct();
+        OrdersDAO ordersDAO = new OrdersDAO();
+        OrderedProductDAO orderedDAO = new OrderedProductDAO();
+        int totalOrder;
+        int totalQuantityProduct;
+        int totalImportPrice;
+        int total;
+        int profit;
+        if(month == null) {
+            totalOrder = ordersDAO.countOrderByYear(year);
+            totalQuantityProduct = orderedDAO.countOrderedProductByYear(year);
+            totalImportPrice = orderedDAO.countImportPriceByYear(year);
+            total = ordersDAO.countTotalByYear(year);
+        }
+        else {
+            totalOrder = ordersDAO.countOrderByMonth(year,month);
+            totalQuantityProduct = orderedDAO.countOrderedProductByMonth(year,month);
+            totalImportPrice = orderedDAO.countImportPriceByMonth(year, month);
+            total = ordersDAO.countTotalByMonth(year, month);
+        }
+        profit = total - totalImportPrice;
+        request.setAttribute("totalProduct", totalProduct);
+        request.setAttribute("totalOrder", totalOrder);
+        request.setAttribute("totalQuantityProduct", totalQuantityProduct);
+        request.setAttribute("total", total);
+        request.setAttribute("profit", profit);
+        request.setAttribute("year", year);
+        request.setAttribute("month", month);
+        request.getRequestDispatcher("statistic.jsp").forward(request, response);
+        
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

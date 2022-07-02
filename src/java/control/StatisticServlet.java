@@ -41,14 +41,14 @@ public class StatisticServlet extends HttpServlet {
         int totalOrder = ordersDAO.countOrder();
         OrderedProductDAO orderedDAO = new OrderedProductDAO();
         int totalQuantityProduct = orderedDAO.countOrderedProduct();
-        AccountDAO accountDAO = new AccountDAO();
-        int totalAccount = accountDAO.countAllAccount();
+        int totalImportPrice = orderedDAO.countImportPrice();
         int total = ordersDAO.countTotal();
+        int profit = total - totalImportPrice;
         request.setAttribute("totalProduct", totalProduct);
         request.setAttribute("totalOrder", totalOrder);
         request.setAttribute("totalQuantityProduct", totalQuantityProduct);
-        request.setAttribute("totalAccount", totalAccount);
         request.setAttribute("total", total);
+        request.setAttribute("profit", profit);
         request.getRequestDispatcher("statistic.jsp").forward(request, response);
     }
 

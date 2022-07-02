@@ -25,19 +25,6 @@
         <c:if test="${sessionScope.acc != null}">
             <c:if test="${sessionScope.acc.isAdmin == 1}">
                  <jsp:include page="menu.jsp"></jsp:include>
-                <!-- breadcrumb part start-->
-<!--                <section class="breadcrumb_part">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="breadcrumb_iner">
-                                    <h2>cart list</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>-->
-                <!-- breadcrumb part end-->
 
               <section class="cart_area section_padding">
                 <div class="container">
@@ -82,8 +69,7 @@
                     </div>
                   </div>
               </section>
-              <!--================End Cart Area =================-->
-                 <!--::footer_part start::-->
+
                 <footer class="footer_part">
                     <div class="footer_iner">
                         <div class="container">
@@ -114,7 +100,6 @@
                         </div>
                     </div>
                 </footer>
-                <!--::footer_part end::-->
 
                 <!-- jquery plugins here-->
                 <script src="js/jquery-1.12.1.min.js"></script>

@@ -89,8 +89,44 @@ public class OrdersDAO extends DBContext{
         }
     }
     
+    public void updateStatusDelivering(String orderID) {
+        String query = "UPDATE Orders SET Status = 'Delivering' where OrderID = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, orderID);
+            ps.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void updateStatusDelivered(String orderID) {
+        String query = "UPDATE Orders SET Status = 'Delivered' where OrderID = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, orderID);
+            ps.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void cancleOrder(String orderID) {
+        String query = "UPDATE Orders SET Status = 'Canceled' where OrderID = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, orderID);
+            ps.executeUpdate();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
     public int countOrder() {
-        String query = "SELECT COUNT(*) FROM Orders";
+        String query = "SELECT COUNT(*) FROM Orders where Status = 'Delivered'";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             rs = ps.executeQuery();
@@ -103,7 +139,7 @@ public class OrdersDAO extends DBContext{
     }
     
     public int countTotal() {
-        String query = "SELECT SUM(Total) FROM Orders";
+        String query = "SELECT SUM(Total) FROM Orders where Status = 'Delivered'";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             rs = ps.executeQuery();
@@ -115,37 +151,61 @@ public class OrdersDAO extends DBContext{
         return 0;
     }
     
-    public void updateStatusDelivering(String orderID) {
-        String query = "UPDATE Orders SET Status = 'Delivering' where OrderID = ?";
+    public int countTotalByYear(String year) {
+        String query = "SELECT SUM(Total) FROM Orders where Status = 'Delivered' and YEAR(Date) = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, orderID);
-            ps.executeUpdate();
+            ps.setString(1, year);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
         }
-        catch (SQLException e){
-            e.printStackTrace();
-        }
+        return 0;
     }
-    public void updateStatusDelivered(String orderID) {
-        String query = "UPDATE Orders SET Status = 'Delivered' where OrderID = ?";
+    
+    public int countTotalByMonth(String year, String month) {
+        String query = "SELECT SUM(Total) FROM Orders where Status = 'Delivered' and YEAR(Date) = ? and MONTH(Date) like ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, orderID);
-            ps.executeUpdate();
+            ps.setString(1, year);
+            ps.setString(2, "%" + month + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
         }
-        catch (SQLException e){
-            e.printStackTrace();
-        }
+        return 0;
     }
-    public void cancleOrder(String orderID) {
-        String query = "UPDATE Orders SET Status = 'Canceled' where OrderID = ?";
+    
+    public int countOrderByYear(String year) {
+        String query = "SELECT COUNT(*) FROM Orders where Status = 'Delivered' and YEAR(Date) = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, orderID);
-            ps.executeUpdate();
+            ps.setString(1, year);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
         }
-        catch (SQLException e){
-            e.printStackTrace();
+        return 0;
+    }
+    
+    public int countOrderByMonth(String year, String month) {
+        String query = "SELECT COUNT(*) FROM Orders where Status = 'Delivered' and YEAR(Date) = ? and MONTH(Date) like ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, year);
+            ps.setString(2, "%" + month + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
         }
+        return 0;
     }
 }

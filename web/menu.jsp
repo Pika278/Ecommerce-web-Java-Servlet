@@ -53,25 +53,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact">Contact</a>
                                 </li>
-
-                                <c:if test = "${sessionScope.acc != null}">
-                                    <c:if test="${sessionScope.acc.isAdmin == 1}">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="manage">Manage</a>
-                                        </li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.acc.isAdmin != 1}">
-<!--                                        <li class="nav-item">
-                                            <a class="nav-link" href="productlist">Product</a>
-                                        </li>-->
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="productlist">Product</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="myorder">My Order</a>
-                                        </li>
-                                    </c:if>
-                                </c:if>
                                 <c:if test="${sessionScope.acc == null}">
                                     <li class="nav-item">
                                         <a class="nav-link" href="productlist">Product</a>
@@ -81,30 +62,36 @@
                                     </li>
                                 </c:if>
                                 <c:if test = "${sessionScope.acc != null}">
-                                    <li class="nav-item">
+                                    <c:if test="${sessionScope.acc.isAdmin == 1}">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="manage">Manage</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="logout">LogOut</a>
+                                        </li>
+                                    </c:if>
+                                    <c:if test="${sessionScope.acc.isAdmin != 1}">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="productlist">Product</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="myorder">My Order</a>
+                                        </li>
+                                        <li class="nav-item">
                                         <a class="nav-link" href="logout">LogOut</a>
-                                    </li>
-                                    <div class="hearer_icon d-flex align-items-center">
-                                        <c:if test="${sessionScope.acc.isAdmin != 1}">
-                                          <a href="cart">
+                                        </li>
+                                        <div class="hearer_icon d-flex align-items-center">
+                                            <a href="cart">
                                               <i class="flaticon-shopping-cart-black-shape"></i>
-                                           </a>
-                                       </c:if>
-                                   </div>
+                                            </a>
+                                        </div>
+                                    </c:if>
                                 </c:if>
+
                             </ul>
                         </div>
                     </nav>
                 </div>
-            </div>
-        </div>
-        <div class="search_input" id="search_input_box">
-            <div class="container ">
-                <form class="d-flex justify-content-between search-inner">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                    <button type="submit" class="btn"></button>
-                    <span class="ti-close" id="close_search" title="Close Search"></span>
-                </form>
             </div>
         </div>
     </header>

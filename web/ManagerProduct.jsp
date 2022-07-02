@@ -25,19 +25,6 @@
         <c:if test="${sessionScope.acc != null}">
             <c:if test="${sessionScope.acc.isAdmin == 1}">
                  <jsp:include page="menu.jsp"></jsp:include>
-                <!-- breadcrumb part start-->
-<!--                <section class="breadcrumb_part">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="breadcrumb_iner">
-                                    <h2>cart list</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>-->
-                <!-- breadcrumb part end-->
               <section class="cart_area section_padding">
                   <div class=" checkout_btn_inner float-right" style=" margin-right: 100px;">
                         <a href="#addEmployeeModal" class="btn_1 btn-success" data-toggle="modal"><span>Add Product</span></a>
@@ -45,6 +32,8 @@
                 <div class="container">
                   <div class="cart_inner">
                     <div class="table-responsive">
+                    <div class="">Total has ${count} product</div>
+
                       <table class="table">
                         <thead>
                           <tr>

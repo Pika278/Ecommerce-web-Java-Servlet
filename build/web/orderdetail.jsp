@@ -10,7 +10,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--Favicon-->
-        <title>OrderDetail</title>
+        <title>Order Detail</title>
         <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap">-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -28,19 +28,6 @@
         </c:if>
         <c:if test="${sessionScope.acc != null}">
                  <jsp:include page="menu.jsp"></jsp:include>
-                <!-- breadcrumb part start-->
-<!--                <section class="breadcrumb_part">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="breadcrumb_iner">
-                                    <h2>cart list</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>-->
-                <!-- breadcrumb part end-->
 
               <section class="cart_area section_padding">
                 <div class="container">
@@ -65,7 +52,6 @@
                             List<OrderedProduct> orderedproducts = orderedDAO.getOrderedProductByUser(oid, uid);
                         
                         %>
-                          <%--<c:forEach items = "${orderedproducts}" var = "o">--%>
                           <% for(OrderedProduct od: orderedproducts) { %>
                           <tr>
                               <td>
@@ -92,14 +78,11 @@
                             </td>
                           </tr>
                           <% } %>
-                          <%--</c:forEach>--%>
                         </tbody>
                       </table>
                     </div>
                   </div>
               </section>
-              <!--================End Cart Area =================-->
-                 <!--::footer_part start::-->
                 <footer class="footer_part">
                     <div class="footer_iner">
                         <div class="container">
@@ -130,7 +113,6 @@
                         </div>
                     </div>
                 </footer>
-                <!--::footer_part end::-->
 
                 <!-- jquery plugins here-->
                 <script src="js/jquery-1.12.1.min.js"></script>

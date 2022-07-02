@@ -29,11 +29,10 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.acc == null}">
+        <c:if test="${sessionScope.acc.isAdmin == 1}">
             <% response.sendRedirect("home"); %>
         </c:if>
-        <c:if test="${sessionScope.acc != null}">
-            <c:if test="${sessionScope.acc.isAdmin != 1}">
+        <c:if test="${sessionScope.acc == null or sessionScope.acc.isAdmin != 1}">
                 <jsp:include page="menu.jsp"></jsp:include>
                 <!-- product list part start-->
                 <section class="product_list section_padding">
@@ -164,10 +163,7 @@
                             </c:if>
                                                                 }
                 </script>
-                </c:if>
-            <c:if test="${sessionScope.acc.isAdmin == 1}">
-                <% response.sendRedirect("home"); %>
-            </c:if>
+
         </c:if>                
 </body>
 

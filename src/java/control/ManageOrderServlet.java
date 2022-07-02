@@ -42,10 +42,6 @@ public class ManageOrderServlet extends HttpServlet {
             throws ServletException, IOException, ParseException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-
-//        OrdersDAO orderDAO = new OrdersDAO();
-//        List<Orders> orders = orderDAO.getAllOrders();
-//        request.setAttribute("orders", orders);
         
         request.getRequestDispatcher("manageOrder.jsp").forward(request, response);
     }

@@ -4,12 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/order.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/manageOrder.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/Edit.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/dao/OrdersDAO.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/ManageOrderServlet.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/CheckOutServlet.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/model/Orders.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/ManageOrderDetailServlet.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/MyOrderDetailServlet.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/UpdateDeliveredServlet.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/orderdetail.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/manageorderdetail.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/model/OrderedProduct.java</file>
         </group>
     </open-files>
 </project-private>

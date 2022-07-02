@@ -81,7 +81,7 @@
                             <div class="col-lg-5 col-sm-6">
                                 <div class="single_product_content">
                                     <h5>Started from $10</h5>
-                                    <h2> <a href="detail">Newesr product update</a> </h2>
+                                    <h2> <a href="detail">Newest product update</a> </h2>
                                     <a href="productlist" class="btn_3">Explore Now</a>
                                 </div>
                             </div>
