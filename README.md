@@ -27,7 +27,7 @@
 ![image](https://user-images.githubusercontent.com/91023190/175114547-8ea838e4-bc22-46ef-b31b-f0ba51e0d09a.png)
 - Giao diện trang đăng nhập
 ![image](https://user-images.githubusercontent.com/91023190/175114589-bcc586b0-551c-4786-baa1-a5f2cd224ace.png)
-- Giao diện trang chủ khi chưa đăng nhập
+- Giao diện trang chủ khi admin đăng nhập
 ![image](https://user-images.githubusercontent.com/91023190/175113863-ec1ebcd8-1bec-454b-8a96-fc4385aa041c.png)
 - Giao diện trang chủ khi khách hàng đăng nhập
 ![image](https://user-images.githubusercontent.com/91023190/175114653-c4abaa6b-ef2f-4fa6-a26f-329f60b8c8ec.png)
