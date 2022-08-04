@@ -11,12 +11,17 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.1/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <!--<link rel="stylesheet" href="css/style.css">-->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
               integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <script>
+            function ProductID2(PID) {
+                document.getElementById("pid2").setAttribute("value", PID);
+            }
+        </script>
     </head>
     <body>
         <c:if test="${sessionScope.acc == null}">
@@ -77,7 +82,7 @@
                             </td>
                             <td>
                                 <a href="loadedit?pid=${o.productID}" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xf044;</i></a>
-                                <a href="delete?pid=${o.productID}" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xe92b;</i></a>
+                                <a href="#deleteEmployeeModal" onclick="ProductID2(${o.productID})" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xe92b;</i></a>
                             </td>
                           </tr>
                           </c:forEach>
@@ -91,7 +96,7 @@
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="add" method="post">
+                    <form action="addproduct" method="post">
                         <div class="modal-header">						
                             <h4 class="modal-title">Add Product</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -106,35 +111,44 @@
                                 <textarea name="description" rows="4" cols="58" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Price</label>
-                                <input type="text" class="form-control" required name="price">
+                                <label>Buying Price</label>
+                                <input type="text" class="form-control" required name="buyingprice">
                             </div>
                             <div class="form-group">
-                                <label>Image Link</label>
-                                <input type="text" class="form-control" required name="imageLink">
+                                <label>Selling Price</label>
+                                <input type="text" class="form-control" required name="sellingprice">
+                            </div>
+                            <div class="form-group">
+                                <label>Image Link1</label>
+                                <input type="text" class="form-control" required name="image1">
+                            </div>
+                            <div class="form-group">
+                                <label>Image Link2</label>
+                                <input type="text" class="form-control" required name="image2">
+                            </div>
+                            <div class="form-group">
+                                <label>Image Link3</label>
+                                <input type="text" class="form-control" required name="image3">
+                            </div>
+                            <div class="form-group">
+                                <label>Image Link4</label>
+                                <input type="text" class="form-control" required name="image4">
+                            </div>
+                            <div class="form-group">
+                                <label>Image Link5</label>
+                                <input type="text" class="form-control" required name="image5">
                             </div>
                             <div class="form-group">
                                 <label>Category</label>
-<!--                                <select name="CategoryID" class="form-control" required>
-                                    <%--<c:forEach var="o" items="${listC}">--%>
-                                        <option value="Smart Phone">Smart Phone</option>
-                                        <option value="Laptop">Laptop</option>
-                                        <option value="Smart Watch">Smart Watch</option>
-                                        <option value="Speaker">Speaker</option>
-                                  <%--</c:forEach>--%>
-                                </select>-->
-                                  <div class="select_option">
-                                        <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
-                                        <div class="select_option_dropdown">
-                                        <c:forEach items = "${listC}" var = "c">
-                                            <p><a href="category?cid=${c.id}">${c.name}</a></p>
-                                        </c:forEach> 
-                                        </div>
-                                   </div>
+                                <select name="cateID" class="form-control" required>
+                                    <c:forEach var="o" items="${listC}">
+                                        <option value="${o.id}">${o.name}</option>
+                                  </c:forEach>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Amount</label>
-                                <input type="text" class="form-control" required name="amount">
+                                <input type="text" class="form-control" required name="quantity">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -145,6 +159,30 @@
                 </div>
             </div>
         </div>
+                          
+                          
+                 <!-- Delete Product -->
+        <div id="deleteEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="delete" method="post">
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Delete Product</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>Are you sure you want to delete this Product?</p>
+                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="text" id="pid2" name="ProductID" visibility: hidden>
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>                 
               <!--================End Cart Area =================-->
                  <!--::footer_part start::-->
                 <footer class="footer_part">
@@ -180,21 +218,21 @@
                 <!--::footer_part end::-->
 
                 <!-- jquery plugins here-->
-                <script src="js/jquery-1.12.1.min.js"></script>
-                <!-- popper js -->
+<!--                <script src="js/jquery-1.12.1.min.js"></script>
+                 popper js 
                 <script src="js/popper.min.js"></script>
-                <!-- bootstrap js -->
+                 bootstrap js 
                 <script src="js/bootstrap.min.js"></script>
-                <!-- easing js -->
+                 easing js 
                 <script src="js/jquery.magnific-popup.js"></script>
-                <!-- swiper js -->
+                 swiper js 
                 <script src="js/swiper.min.js"></script>
-                <!-- swiper js -->
+                 swiper js 
                 <script src="js/mixitup.min.js"></script>
-                <!-- particles js -->
+                 particles js 
                 <script src="js/owl.carousel.min.js"></script>
                 <script src="js/jquery.nice-select.min.js"></script>
-                <!-- slick js -->
+                 slick js 
                 <script src="js/slick.min.js"></script>
                 <script src="js/jquery.counterup.min.js"></script>
                 <script src="js/waypoints.min.js"></script>
@@ -203,8 +241,8 @@
                 <script src="js/jquery.form.js"></script>
                 <script src="js/jquery.validate.min.js"></script>
                 <script src="js/mail-script.js"></script>
-                <!-- custom js -->
-                <script src="js/custom.js"></script>
+                 custom js 
+                <script src="js/custom.js"></script>-->
             </c:if>
             <c:if test="${sessionScope.acc.isAdmin != 1}">
                 <% response.sendRedirect("home"); %>

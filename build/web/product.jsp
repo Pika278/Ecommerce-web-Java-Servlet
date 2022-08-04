@@ -64,7 +64,7 @@
                                         <c:forEach items="${listP}" var="o">
                                             <div class="col-lg-6 col-sm-6">
                                                  <div class="single_product_item">
-                                                    <img src="${o.image1}" alt="#" class="img-fluid">
+                                                    <img src="${o.image1}" alt="#" class="img-fluid" class = "productlist-img">
                                                     <h3> <a href="detail?pid=${o.productID}">${o.productName}</a> </h3>
                                                     <p>$${o.getPriceWithDot()}</p>
                                                 </div>

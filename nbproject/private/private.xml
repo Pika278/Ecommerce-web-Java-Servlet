@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/order.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/ManageOrderDetailServlet.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/MyOrderDetailServlet.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/UpdateDeliveredServlet.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/orderdetail.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/manageorderdetail.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/model/OrderedProduct.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/DeleteProductServlet.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/ManagerProduct.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/product.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/ManagerProductServlet.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/detail.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/css/style.css</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/AddProductServlet.java</file>
         </group>
     </open-files>
 </project-private>

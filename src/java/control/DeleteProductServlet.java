@@ -34,10 +34,10 @@ public class DeleteProductServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String pid = request.getParameter("pid");
+        String pid = request.getParameter("ProductID");
         ProductDAO pDAO = new ProductDAO();
         pDAO.delete(pid);
-        response.sendRedirect("managerproduct");
+        response.sendRedirect("manageproduct");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

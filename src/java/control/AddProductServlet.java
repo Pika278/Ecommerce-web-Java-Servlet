@@ -50,7 +50,7 @@ public class AddProductServlet extends HttpServlet {
         //Add data to Database
         ProductDAO dao = new ProductDAO();
         dao.add(cateID, name, buyingprice, sellingprice, quantity, image1, image2, image3, image4, image5, description);
-        response.sendRedirect("managerproduct");
+        response.sendRedirect("manageproduct");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
