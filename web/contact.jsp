@@ -29,33 +29,14 @@
 
 <body>
     <jsp:include page="menu.jsp"></jsp:include>
-    
-    <!-- breadcrumb part start-->
-<!--    <section class="breadcrumb_part">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <h2>contact</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- breadcrumb part end-->
-
   <!-- ================ contact section start ================= -->
   <section class="contact-section section_padding">
     <div class="container">
       <div class="d-none d-sm-block mb-5 pb-4">
-        <!--<div id="map" style="height: 480px;"></div>-->
-<!--        <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap">
-        </script>-->
-        <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.3050672234995!2d105.78562815074567!3d20.98040498595592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1655840509000!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.3149951871856!2d105.793491414841!3d20.980006794816916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acc51191abcb%3A0x47247696a51de226!2zMTQxIENoaeG6v24gVGjhuq9uZywgVMOibiBUcmnhu4F1LCBIw6AgxJDDtG5nLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1659654906211!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
-
 
       <div class="row">
         <div class="col-12">
@@ -101,8 +82,8 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
-              <h3>Hà Đông, Hà Nội</h3>
-              <p>Km10, Nguyễn Trãi</p>
+              <h3>Thanh Trì, Hà Nội</h3>
+              <p>141 Chiến Thắng</p>
             </div>
           </div>
           <div class="media contact-info">
