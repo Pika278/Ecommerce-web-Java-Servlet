@@ -50,7 +50,7 @@
 - Giao diện trang quản lý sản phẩm
 ![image](https://user-images.githubusercontent.com/91023190/177005911-9b5bb4fb-c646-4120-981c-c5924f20a445.png)
 - Giao diện trang thêm sản phẩm
-![image](https://user-images.githubusercontent.com/91023190/175115853-03476c96-e8b8-4028-87e2-2aa7332f092f.png)
+![image](https://user-images.githubusercontent.com/91023190/182982889-5bacf22f-a0c5-443c-a111-4da7c26b9bf1.png)
 - Giao diện trang quản lý đơn hàng
 ![image](https://user-images.githubusercontent.com/91023190/175115918-f3e3be70-c486-4a53-aa52-bb2713915017.png)
 - Giao diện trang thống kê
