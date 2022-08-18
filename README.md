@@ -54,4 +54,5 @@
 - Giao diện trang quản lý đơn hàng
 ![image](https://user-images.githubusercontent.com/91023190/175115918-f3e3be70-c486-4a53-aa52-bb2713915017.png)
 - Giao diện trang thống kê
-![image](https://user-images.githubusercontent.com/91023190/177005927-7cb83528-25e8-4c72-92b3-7d7f1d55ab93.png)
+![image](https://user-images.githubusercontent.com/91023190/185507846-2522b3c1-7d59-4c20-bbb6-882c45c95296.png)
+
