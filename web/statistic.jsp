@@ -32,25 +32,27 @@
                                 <div class="single_sedebar">
                                     <form action="statisticfilter" method = "post">
                                             <div class="col-md-12 form-group ">
-                                            <input value="${year}" type="text" class="form-control" name="year" placeholder = "Enter Year">
+                                            <input value="${year}" type="text" class="form-control" name="year" placeholder = "Enter Year" >
                                             </div>
                                             <div class="col-md-12 form-group p_star">
                                               <input value="${month}" type="text" class="form-control"  name="month" placeholder = "Enter Month">                                        <i class="ti-search"></i>
+                                            </div>
+                                            <div class="col-md-12 form-group p_star">
+                                              <input value="${day}" type="text" class="form-control"  name="day" placeholder = "Enter Day">                                        <i class="ti-search"></i>
                                             </div>
                                             <div class="col-md-12 form-group p_star">
                                                 <button class = "btn_1" type="submit">Submit</button>
                                             </div>
                                     </form>
                                 </div>
-                                
                             </div>
                         </div> 
-                 </div>
+                    </div>
                  </div>
                                         
-            <div class="container">
+            <!--<div class="container">-->
                  <section class="feature_part section_padding">
-                    <div class="container" style="padding-top: 100px; "> 
+                    <div class="container" style="padding-top: 200px; "> 
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single_feature_part">
@@ -80,39 +82,9 @@
                             </div>
                         </div>
                     </div>
-                 </section><!--
-                <!--::footer_part start::-->
-                <footer class="footer_part">
-                    <div class="footer_iner">
-                        <div class="container">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col-lg-8">
-                                    <div class="footer_menu">
-                                        <div class="footer_logo">
-                                            <a href="home"><img src="img/logo1.png" alt="#"></a>
-                                        </div>
-                                        <div class="footer_menu_item">
-                                            <a href="home">Home</a>
-                                            <a href="about">About</a>
-                                            <a href="product">Products</a>
-                                            <a href="contact">Contact</a>
-                                            <a href="login">Login</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="social_icon">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!--::footer_part end::-->
+                 </section>
+            <!--</div>-->
+<jsp:include page="footer.jsp"></jsp:include>
 
                 <!-- jquery plugins here-->
                 <script src="js/jquery-1.12.1.min.js"></script>

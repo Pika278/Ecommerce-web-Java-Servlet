@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/DeleteProductServlet.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/ManagerProduct.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/product.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/ManagerProductServlet.java</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/detail.jsp</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/css/style.css</file>
-            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/AddProductServlet.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/footer.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/menu.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/checkout.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/dao/OrdersDAO.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/control/StatisticFilterServlet.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/web/statistic.jsp</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/web/src/java/dao/OrderedProductDAO.java</file>
         </group>
     </open-files>
 </project-private>

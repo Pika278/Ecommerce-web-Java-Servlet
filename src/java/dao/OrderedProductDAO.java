@@ -106,26 +106,28 @@ public class OrderedProductDAO extends DBContext{
         return 0;
     }
     
-    public int countOrderedProductByYear(String year) {
-        String query = "SELECT SUM (Quantity) FROM OrderedProduct join Orders on Orders.OrderID = OrderedProduct.OrderID where Status = 'Delivered' and YEAR(Orders.Date) = ?";
-        try {
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, year);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                return rs.getInt(1);
-            }
-        } catch (Exception e) {
-        }
-        return 0;
-    }
-    
-    public int countOrderedProductByMonth(String year, String month) {
-        String query = "SELECT SUM (Quantity) FROM OrderedProduct join Orders on Orders.OrderID = OrderedProduct.OrderID where Status = 'Delivered' and YEAR(Orders.Date) = ? and MONTH(Orders.Date) = ?";
+//    public int countOrderedProductByYear(String year) {
+//        String query = "SELECT SUM (Quantity) FROM OrderedProduct join Orders on Orders.OrderID = OrderedProduct.OrderID where Status = 'Delivered' and YEAR(Orders.Date) = ?";
+//        try {
+//            PreparedStatement ps = connection.prepareStatement(query);
+//            ps.setString(1, year);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                return rs.getInt(1);
+//            }
+//        } catch (Exception e) {
+//        }
+//        return 0;
+//    }
+//    
+    public int countOrderedProductByDate(String year, String month, String day) {
+        String query = "SELECT SUM (Quantity) FROM OrderedProduct join Orders on Orders.OrderID = OrderedProduct.OrderID where Status = 'Delivered' and YEAR(Date) = ISNULL(?,YEAR(Date)) and MONTH(Date) = ISNULL(?,MONTH(Date))\n" +
+"and DAY(Date) = ISNULL(?,DAY(Date))";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, year);
             ps.setString(2, month);
+            ps.setString(3, day);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);
@@ -149,28 +151,30 @@ public class OrderedProductDAO extends DBContext{
         return 0;
     }
     
-    public int countImportPriceByYear(String year) {
-        String query = "SELECT SUM(Product.BuyingPrice * OrderedProduct.Quantity) FROM Product join OrderedProduct on Product.ProductID = OrderedProduct.ProductID "
-                + "join Orders on Orders.OrderID = OrderedProduct.OrderID where Orders.Status = 'Delivered' and YEAR(Orders.Date) = ?";
-        try {
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, year);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                return rs.getInt(1);
-            }
-        } catch (Exception e) {
-        }
-        return 0;
-    }
+//    public int countImportPriceByYear(String year) {
+//        String query = "SELECT SUM(Product.BuyingPrice * OrderedProduct.Quantity) FROM Product join OrderedProduct on Product.ProductID = OrderedProduct.ProductID "
+//                + "join Orders on Orders.OrderID = OrderedProduct.OrderID where Orders.Status = 'Delivered' and YEAR(Orders.Date) = ?";
+//        try {
+//            PreparedStatement ps = connection.prepareStatement(query);
+//            ps.setString(1, year);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                return rs.getInt(1);
+//            }
+//        } catch (Exception e) {
+//        }
+//        return 0;
+//    }
     
-    public int countImportPriceByMonth(String year, String month) {
+    public int countImportPriceByDate(String year, String month, String day) {
         String query = "SELECT SUM(Product.BuyingPrice * OrderedProduct.Quantity) FROM Product join OrderedProduct on Product.ProductID = OrderedProduct.ProductID "
-                + "join Orders on Orders.OrderID = OrderedProduct.OrderID where Orders.Status = 'Delivered' and YEAR(Orders.Date) = ?  and MONTH(Orders.Date) = ?";
+                + "join Orders on Orders.OrderID = OrderedProduct.OrderID where Orders.Status = 'Delivered' and YEAR(Date) = ISNULL(?,YEAR(Date)) and MONTH(Date) = ISNULL(?,MONTH(Date))\n" +
+"and DAY(Date) = ISNULL(?,DAY(Date))";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, year);
             ps.setString(2, month);
+            ps.setString(3, day);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);

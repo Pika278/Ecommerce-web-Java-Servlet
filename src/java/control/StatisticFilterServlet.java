@@ -38,6 +38,7 @@ public class StatisticFilterServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String year = request.getParameter("year");
         String month = request.getParameter("month");
+        String day = request.getParameter("day");
         ProductDAO productDAO = new ProductDAO();
         int totalProduct = productDAO.countProduct();
         OrdersDAO ordersDAO = new OrdersDAO();
@@ -47,18 +48,20 @@ public class StatisticFilterServlet extends HttpServlet {
         int totalImportPrice;
         int total;
         int profit;
+        if(year.isEmpty()) {
+            year = null;
+        }
         if(month.isEmpty()) {
-            totalOrder = ordersDAO.countOrderByYear(year);
-            totalQuantityProduct = orderedDAO.countOrderedProductByYear(year);
-            totalImportPrice = orderedDAO.countImportPriceByYear(year);
-            total = ordersDAO.countTotalByYear(year);
+            month = null;
         }
-        else {
-            totalOrder = ordersDAO.countOrderByMonth(year,month);
-            totalQuantityProduct = orderedDAO.countOrderedProductByMonth(year,month);
-            totalImportPrice = orderedDAO.countImportPriceByMonth(year, month);
-            total = ordersDAO.countTotalByMonth(year, month);
+        if(day.isEmpty()) {
+            day = null;
         }
+            totalOrder = ordersDAO.countOrderByDate(year,month,day);
+            totalQuantityProduct = orderedDAO.countOrderedProductByDate(year,month,day);
+            totalImportPrice = orderedDAO.countImportPriceByDate(year, month,day);
+            total = ordersDAO.countTotalByDate(year, month,day);
+//        }
         profit = total - totalImportPrice;
         request.setAttribute("totalProduct", totalProduct);
         request.setAttribute("totalOrder", totalOrder);
@@ -67,6 +70,8 @@ public class StatisticFilterServlet extends HttpServlet {
         request.setAttribute("profit", profit);
         request.setAttribute("year", year);
         request.setAttribute("month", month);
+        request.setAttribute("day", day);
+        
         request.getRequestDispatcher("statistic.jsp").forward(request, response);
         
     }

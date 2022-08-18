@@ -47,38 +47,7 @@
                     </div>
                  </section>
                 
-                 <!--::footer_part start::-->
-                <footer class="footer_part">
-                    <div class="footer_iner">
-                        <div class="container">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col-lg-8">
-                                    <div class="footer_menu">
-                                        <div class="footer_logo">
-                                            <a href="home"><img src="img/logo1.png" alt="#"></a>
-                                        </div>
-                                        <div class="footer_menu_item">
-                                            <a href="home">Home</a>
-                                            <a href="about">About</a>
-                                            <a href="product">Products</a>
-                                            <a href="contact">Contact</a>
-                                            <a href="login">Login</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="social_icon">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!--::footer_part end::-->
+<jsp:include page="footer.jsp"></jsp:include>
 
                 <!-- jquery plugins here-->
                 <script src="js/jquery-1.12.1.min.js"></script>
